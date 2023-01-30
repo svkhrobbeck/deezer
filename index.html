@@ -1,37 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deezer - Sukhrobbek</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.png" />
 
-  <!-- Favicon -->
-  <!-- <link rel="shortcut icon" href="images/"> -->
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-</head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container">
+        <div class="site-header__inner">
+          <div class="site-header__logo logo">
+            <a class="logo__link" href="">
+              <img
+                class="logo__img"
+                src="images/logo.svg"
+                alt="deezer logo"
+                width="144"
+                height="28"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /HEADER -->
 
-<body>
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <div class="container">
+        <!-- play button -->
+        <button class="button button--play" data-play-btn>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="-1.5 0 24 24"
+            id="meteor-icon-kit__solid-play"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 2.00304V22.003C0 23.5499 1.68077 24.5112 3.01404 23.7269L20.014 13.7269C21.3287 12.9536 21.3287 11.0525 20.014 10.2792L3.01404 0.279167C1.68077 -0.505108 0 0.456203 0 2.00304z"
+              fill="#292D32"
+            />
+          </svg>
+        </button>
 
-  <!-- HEADER -->
-  <!-- /HEADER -->
+        <!-- pause button -->
+        <button class="button button--pause" data-pause-btn>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M10.65 19.11V4.89C10.65 3.54 10.08 3 8.64 3H5.01C3.57 3 3 3.54 3 4.89V19.11C3 20.46 3.57 21 5.01 21H8.64C10.08 21 10.65 20.46 10.65 19.11Z"
+              fill="#292D32"
+            />
+            <path
+              d="M21.0016 19.11V4.89C21.0016 3.54 20.4316 3 18.9916 3H15.3616C13.9316 3 13.3516 3.54 13.3516 4.89V19.11C13.3516 20.46 13.9216 21 15.3616 21H18.9916C20.4316 21 21.0016 20.46 21.0016 19.11Z"
+              fill="#292D32"
+            />
+          </svg>
+        </button>
+        <audio src="music/konsta-bilmaydi.mp3" data-music></audio>
+      </div>
+    </main>
+    <!-- /MAIN CONTENT -->
 
-  <!-- MAIN CONTENT -->
-  <main class="main-content">
-  </main>
-  <!-- /MAIN CONTENT -->
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__inner">
+          <div class="site-footer__logo logo">
+            <h1>
+              <a class="logo__link" href="/">
+                <img
+                  class="logo__img"
+                  src="images/logo-white.svg"
+                  alt="deezer white logo"
+                  width="144"
+                  height="28"
+                />
+              </a>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- /FOOTER -->
 
-  <!-- FOOTER -->
-  <!-- /FOOTER -->
-
-
-  <!-- SCRIPTS -->
-  <!-- <script src="js/main.js"></script> -->
-
-</body>
-
+    <!-- SCRIPTS -->
+    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
+  </body>
 </html>
