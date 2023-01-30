@@ -1,3 +1,32 @@
+/* FONTS */
+@font-face {
+  font-weight: 400;
+  src: url("../fonts/rubik-v23-latin-regular.woff2") format("woff2"), url("../fonts/rubik-v23-latin-regular.woff") format("woff");
+  font-display: swap;
+  font-family: "Rubik";
+  font-style: normal;
+}
+@font-face {
+  font-weight: 500;
+  src: url("../fonts/rubik-v23-latin-500.woff2") format("woff2"), url("../fonts/rubik-v23-latin-500.woff") format("woff");
+  font-display: swap;
+  font-family: "Rubik";
+  font-style: normal;
+}
+@font-face {
+  font-weight: 600;
+  src: url("../fonts/rubik-v23-latin-600.woff2") format("woff2"), url("../fonts/rubik-v23-latin-600.woff") format("woff");
+  font-display: swap;
+  font-family: "Rubik";
+  font-style: normal;
+}
+@font-face {
+  font-weight: 700;
+  src: url("../fonts/rubik-v23-latin-700.woff2") format("woff2"), url("../fonts/rubik-v23-latin-700.woff") format("woff");
+  font-display: swap;
+  font-family: "Rubik";
+  font-style: normal;
+}
 /* CUSTOM PROPS */
 :root {
   --primary-bg-color: #606eb1;
@@ -37,7 +66,7 @@ img {
 
 body {
   height: 100%;
-  font-family: "Arial", sans-serif;
+  font-family: "Rubik", "Arial", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: var(--text-color);
@@ -109,29 +138,6 @@ body {
   padding: 0 20px;
 }
 
-.button {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-  border-radius: 50%;
-  background-color: #fff;
-  transition: transform 0.3s linear;
-}
-.button:hover {
-  transform: scale(1.1);
-}
-.button--play {
-  padding-left: 18px;
-  padding-right: 12px;
-}
-.button--pause {
-  display: none;
-}
-
 /* HEADER */
 .site-header {
   padding: 20px 0;
@@ -143,6 +149,58 @@ body {
   max-width: 144px;
   width: 100%;
   height: auto;
+}
+
+/* TRACKS */
+.tracks__title {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.tracks-wrapper {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.track-card {
+  max-width: 250px;
+  width: 100%;
+  background-color: #fff;
+}
+.track-card:hover .button--play {
+  display: flex;
+}
+
+.track-card__buttons {
+  display: flex;
+  position: relative;
+  top: -70px;
+  left: 10px;
+}
+
+/* BUTTON */
+.button {
+  border: none;
+  position: absolute;
+  background-color: transparent;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: transform 0.3s linear;
+  display: none;
+}
+.button:hover {
+  transform: scale(1.1);
+}
+.button--play {
+  padding-left: 18px;
+  padding-right: 12px;
 }
 
 /* FOOTER */
