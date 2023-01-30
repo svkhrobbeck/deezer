@@ -1,0 +1,88 @@
+/* TRACKS */
+.info-card {
+  &:not(:last-child) {
+    margin-bottom: 100px;
+  }
+}
+.info-card__title {
+  @include for-title;
+}
+
+.info-card__wrapper {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* CARD OF INFO-CARD */
+.info-card__card {
+  max-width: 250px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  background-color: #fff;
+
+  &:hover .button--play {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.info-card__card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-card__card-title {
+  font-size: 18px;
+  margin-top: auto;
+}
+
+.info-card__card-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  margin-right: auto;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    background: no-repeat center / contain;
+    background-image: url("../images/earphone.svg");
+  }
+}
+
+/* BUTTON */
+.track-card__buttons {
+  display: flex;
+  position: relative;
+  top: -70px;
+  left: 10px;
+}
+
+/* BUTTON */
+.button {
+  border: none;
+  position: absolute;
+  background-color: transparent;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+
+  &--play {
+    padding-left: 18px;
+    padding-right: 12px;
+  }
+}

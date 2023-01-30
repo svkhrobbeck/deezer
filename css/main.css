@@ -171,7 +171,12 @@ body {
   background-color: #fff;
 }
 .track-card:hover .button--play {
-  display: flex;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.track-card__title {
+  font-size: 18px;
 }
 
 .track-card__buttons {
@@ -192,11 +197,9 @@ body {
   padding: 15px;
   border-radius: 50%;
   background-color: #fff;
-  transition: transform 0.3s linear;
-  display: none;
-}
-.button:hover {
-  transform: scale(1.1);
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 .button--play {
   padding-left: 18px;

@@ -62,11 +62,12 @@ body {
 
 ::-webkit-scrollbar-thumb {
   @media only screen and (min-width: $tablet) {
-    background: rgb(110, 110, 110);
+    background: #b3404a;
     border-radius: 10px;
+    transition: background-color 0.5s ease;
 
     &:hover {
-      background: rgb(110, 110, 110);
+      background-color: #9f1b1b;
     }
   }
 }

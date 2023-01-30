@@ -47,15 +47,20 @@ document.addEventListener("click", evt => {
   onPlayBtnClick(evt)
 })
 
+// play button function 
 function onPlayBtnClick(evt) {
   const elTarget = evt.target.closest("[data-play-btn]")
 
   if (!elTarget) return
 
-  
+
   if (elAudio.paused) {
-    elAudio.src = elTarget.dataset.trackURL
     elAudio.play()
+    if (elAudio.src === elTarget.dataset.trackURL) {
+      elAudio.play()
+    } else {
+      elAudio.src = elTarget.dataset.trackURL
+    }
   } else {
     elAudio.pause()
   }
