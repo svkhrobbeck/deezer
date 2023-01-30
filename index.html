@@ -38,12 +38,41 @@
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
-      <section class="tracks">
+      <!-- ARTISTS -->
+      <section class="artists info-card">
         <div class="container">
-          <h2 class="tracks__title">Tracks</h2>
-          <div class="tracks-wrapper" data-tracks-wrapper></div>
+          <h2 class="artists__title info-card__title">Artists</h2>
+          <div
+            class="artists__wrapper info-card__wrapper"
+            data-artists-wrapper
+          ></div>
         </div>
       </section>
+      <!-- /ARTISTS -->
+
+      <!-- PLAYLISTS -->
+      <section class="playlists info-card">
+        <div class="container">
+          <h2 class="playlists__title info-card__title">Playlists</h2>
+          <div
+            class="playlists__wrapper info-card__wrapper"
+            data-playlists-wrapper
+          ></div>
+        </div>
+      </section>
+      <!-- /PLAYLISTS -->
+
+      <!-- TRACKS -->
+      <section class="tracks info-card">
+        <div class="container">
+          <h2 class="tracks__title info-card__title">Tracks</h2>
+          <div
+            class="tracks__wrapper info-card__wrapper"
+            data-tracks-wrapper
+          ></div>
+        </div>
+      </section>
+      <!-- /TRACKS -->
     </main>
     <!-- /MAIN CONTENT -->
 
@@ -69,9 +98,61 @@
     </footer>
     <!-- /FOOTER -->
 
-    <!-- ALBUM TEMPLATE -->
+    <!-- ARTISTS TEMPLATE -->
+    <template data-artist-template>
+      <div class="artist-card card info-card__card">
+        <div class="artist-card__img-wrapper card-body">
+          <img data-artist-img />
+        </div>
+        <div class="artist-card__content card-body info-card__card-content">
+          <h3
+            class="artist-card__name info-card__card-title"
+            data-artist-name
+          ></h3>
+          <p
+            class="artist-card__job-text info-card__card-text"
+            data-artist-job-text
+          ></p>
+          <a
+            class="artist-card__link info-card__card-link"
+            href=""
+            data-artist-link
+            >Listen Artist</a
+          >
+        </div>
+      </div>
+    </template>
+    <!-- /ARTISTS TEMPLATE -->
+
+    <!-- PLAYLISTS TEMPLATE -->
+    <template data-playlist-template>
+      <div class="playlist-card card info-card__card">
+        <div class="playlist-card__img-wrapper card-body">
+          <img data-playlist-img />
+        </div>
+        <div class="playlist-card__content card-body info-card__card-content">
+          <h3
+            class="playlist-card__title info-card__card-title"
+            data-playlist-title
+          ></h3>
+          <p
+            class="playlist-card__type-text info-card__card-text"
+            data-playlist-type-text
+          ></p>
+          <a
+            class="playlist-card__link info-card__card-link"
+            href=""
+            data-playlist-link
+            >Listen Playlist</a
+          >
+        </div>
+      </div>
+    </template>
+    <!-- /PLAYLISTS TEMPLATE -->
+
+    <!-- TRACKS TEMPLATE -->
     <template data-track-template>
-      <div class="track-card card">
+      <div class="track-card card info-card__card">
         <div class="track-card__img-wrapper card-body">
           <img data-track-img />
           <div class="track-card__buttons">
@@ -95,13 +176,19 @@
             </button>
           </div>
         </div>
-        <div class="track-card__content card-body">
-          <h2 class="track-card__title card-title" data-track-title></h2>
-          <p class="track-card__type-text card-text" data-track-type-text></p>
+        <div class="track-card__content card-body info-card__card-content">
+          <h2
+            class="track-card__title card-title info-card__card-title"
+            data-track-title
+          ></h2>
+          <p
+            class="track-card__type-text card-text info-card__card-text"
+            data-track-type-text
+          ></p>
         </div>
       </div>
     </template>
-    <!-- /ALBUM TEMPLATE -->
+    <!-- /TRACKS TEMPLATE -->
 
     <!-- AUDIO -->
     <audio data-music></audio>
