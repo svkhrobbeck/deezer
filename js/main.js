@@ -10,6 +10,8 @@ const elPlaylistsWrapper = document.querySelector("[data-playlists-wrapper]")
 const elTracksWrapper = document.querySelector("[data-tracks-wrapper]")
 const elTPodcastsWrapper = document.querySelector("[data-podcasts-wrapper]")
 
+const ElSiteHeader = document.querySelector("[data-site-header]")
+
 const elAudio = document.querySelector("[data-music]")
 
 
@@ -34,3 +36,7 @@ function onPlayBtnClick(evt) {
   }
 }
 
+// Header scroll evt
+window.addEventListener('scroll', () => {
+  ElSiteHeader.classList.toggle('sticky', window.scrollY > 0);
+});

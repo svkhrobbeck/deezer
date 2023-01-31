@@ -1,6 +1,6 @@
 /* CUSTOM PROPS */
 :root {
-  --primary-bg-color: #606eb1;
+  --primary-bg-color: #0b466e;
   --text-color: #000;
 }
 
@@ -41,7 +41,8 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: var(--text-color);
-  background-color: var(--primary-bg-color);
+  background: var(--primary-bg-color) url("../images/bg.jpg") no-repeat center /
+    cover fixed;
   display: flex;
   flex-direction: column;
 }
