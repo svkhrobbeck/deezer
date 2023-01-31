@@ -10,23 +10,16 @@ const elPlaylistsWrapper = document.querySelector("[data-playlists-wrapper]")
 const elTracksWrapper = document.querySelector("[data-tracks-wrapper]")
 const elTPodcastsWrapper = document.querySelector("[data-podcasts-wrapper]")
 
+const elAudio = document.querySelector("[data-music]")
 const ElSiteHeader = document.querySelector("[data-site-header]")
 
-const elAudio = document.querySelector("[data-music]")
 
 
 document.addEventListener("click", evt => {
   onPlayBtnClick(evt)
   onPauseBtnClick(evt)
-
-
 })
 
-elAudio.addEventListener("ended", () => {
-
-  document.querySelector("[data-play-btn]").style.display = "flex"
-  document.querySelector("[data-pause-btn]").style.display = "none"
-})
 // play button function 
 function onPlayBtnClick(evt) {
   const elTarget = evt.target.closest("[data-play-btn]")
@@ -45,7 +38,6 @@ function onPlayBtnClick(evt) {
   }
 }
 
-
 // play button function 
 function onPauseBtnClick(evt) {
   const elTarget = evt.target.closest("[data-pause-btn]")
@@ -57,11 +49,21 @@ function onPauseBtnClick(evt) {
 
   if (!elAudio.paused) {
     elAudio.pause()
-  } else {
-
   }
 }
 
+elAudio.addEventListener("ended", () => {
+  const elPlayBtn = document.querySelectorAll("[data-play-btn]")
+  const elPauseBtn = document.querySelectorAll("[data-pause-btn]")
+
+  elPlayBtn.forEach(btn => {
+    btn.style.display = "flex"
+  });
+
+  elPauseBtn.forEach(btn => {
+    btn.style.display = "none"
+  })
+})
 
 // Header scroll evt
 window.addEventListener('scroll', () => {

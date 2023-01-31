@@ -52,3 +52,4 @@ function renderTracksPlaylist(tracks) {
     elPlaylistPageTrackWrapper.appendChild(elPlaylistTrackCard)
   })
 }
+
