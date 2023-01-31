@@ -324,9 +324,37 @@ body {
 .site-footer {
   background-color: #262d4e;
 }
+
+.site-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 @media only screen and (max-width: 576px) {
-  .site-footer {
-    display: flex;
-    justify-content: center;
+  .site-footer__inner {
+    flex-direction: column;
   }
+}
+
+/* COPYRIGHT */
+.copyright {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 768px) {
+  .copyright {
+    font-size: 19px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .copyright {
+    font-size: 17px;
+  }
+}
+
+.copyright__link {
+  text-decoration: none;
 }/*# sourceMappingURL=main.css.map */
