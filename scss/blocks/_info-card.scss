@@ -72,11 +72,11 @@
 
 .info-card__card-desc {
   overflow: hidden;
-text-overflow: ellipsis;
-display: -webkit-box;
--webkit-line-clamp: 10; /* number of lines to show */
-       line-clamp: 10; 
--webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 10; /* number of lines to show */
+  line-clamp: 10;
+  -webkit-box-orient: vertical;
 }
 
 /* BUTTON */
