@@ -1,3 +1,7 @@
+const elArtistsWrapper = document.querySelector("[data-artists-wrapper]")
+const elPlaylistsWrapper = document.querySelector("[data-playlists-wrapper]")
+const elTracksWrapper = document.querySelector("[data-tracks-wrapper]")
+const elTPodcastsWrapper = document.querySelector("[data-podcasts-wrapper]")
 
 // GetData function
 async function getData(resource) {
@@ -86,7 +90,7 @@ function renderPodcasts(podcasts) {
 }
 
 
-// Swiper
+// Swiper slider
 const swiper = new Swiper('.swiper', {
 
   direction: "horizontal",
