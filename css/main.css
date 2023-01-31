@@ -307,6 +307,12 @@ body {
     left: 15%;
   }
 }
+@media only screen and (max-width: 576px) {
+  .track-card__buttons {
+    bottom: 27%;
+    left: 17%;
+  }
+}
 
 .button {
   border: none;
@@ -320,6 +326,12 @@ body {
   padding-left: 18px;
   padding-right: 12px;
 }
+@media only screen and (max-width: 768px) {
+  .button--play {
+    padding-left: 17px;
+    padding-right: 13px;
+  }
+}
 .button--pause {
   display: none;
 }
@@ -331,6 +343,12 @@ body {
   .button svg {
     width: 20px;
     height: 20px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .button svg {
+    width: 16px;
+    height: 16px;
   }
 }
 

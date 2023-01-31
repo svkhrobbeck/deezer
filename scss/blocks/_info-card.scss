@@ -104,6 +104,11 @@
     bottom: 25%;
     left: 15%;
   }
+
+  @media only screen and (max-width: $mobile) {
+    bottom: 27%;
+    left: 17%;
+  }
 }
 
 .button {
@@ -117,6 +122,12 @@
   &--play {
     padding-left: 18px;
     padding-right: 12px;
+
+    
+    @media only screen and (max-width: $tablet) {
+      padding-left: 17px;
+      padding-right: 13px;
+    }
   }
 
   &--pause {
@@ -130,6 +141,11 @@
     @media only screen and (max-width: $tablet) {
       width: 20px;
       height: 20px;
+    }
+
+    @media only screen and (max-width: $mobile) {
+      width: 16px;
+      height: 16px;
     }
   }
 }
