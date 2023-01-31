@@ -26,6 +26,7 @@
 
 /* CARD OF INFO-CARD */
 .info-card__card {
+  position: relative;
   max-width: 250px;
   width: 100%;
   height: auto;
@@ -84,9 +85,9 @@
 /* BUTTON */
 .track-card__buttons {
   display: flex;
-  position: relative;
-  top: -70px;
-  left: 10px;
+  position: absolute;
+  top: 140px;
+  left: 20px;
   transform: scale(0);
   opacity: 0;
   transition: transform 0.5s ease, opacity 0.5s ease;
@@ -101,7 +102,6 @@
 .button {
   border: none;
   background-color: transparent;
-  position: absolute;
   cursor: pointer;
   justify-content: center;
   align-items: center;
