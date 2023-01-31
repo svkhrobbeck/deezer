@@ -18,14 +18,21 @@ const elAudio = document.querySelector("[data-music]")
 document.addEventListener("click", evt => {
   onPlayBtnClick(evt)
   onPauseBtnClick(evt)
+
+
 })
 
+elAudio.addEventListener("ended", () => {
+
+  document.querySelector("[data-play-btn]").style.display = "flex"
+  document.querySelector("[data-pause-btn]").style.display = "none"
+})
 // play button function 
 function onPlayBtnClick(evt) {
   const elTarget = evt.target.closest("[data-play-btn]")
 
   if (!elTarget) return
-  
+
   elTarget.style.display = "none"
   elTarget.nextElementSibling.style.display = "flex"
 
@@ -54,6 +61,8 @@ function onPauseBtnClick(evt) {
 
   }
 }
+
+
 // Header scroll evt
 window.addEventListener('scroll', () => {
   ElSiteHeader.classList.toggle('sticky', window.scrollY > 0);
