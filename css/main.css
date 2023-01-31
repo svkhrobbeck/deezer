@@ -320,6 +320,12 @@ body {
   padding-left: 18px;
   padding-right: 12px;
 }
+@media only screen and (max-width: 768px) {
+  .button--play {
+    padding-left: 17px;
+    padding-right: 13px;
+  }
+}
 .button--pause {
   display: none;
 }
