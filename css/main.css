@@ -292,9 +292,11 @@ body {
   position: absolute;
   bottom: 20%;
   left: 10%;
+  border-radius: 50%;
   transform: scale(0);
   opacity: 0;
   transition: transform 0.5s ease, opacity 0.5s ease;
+  background-color: #fff;
 }
 @media only screen and (max-width: 768px) {
   .track-card__buttons {
@@ -307,12 +309,10 @@ body {
 .button {
   border: none;
   background-color: transparent;
+  padding: 15px;
   cursor: pointer;
   justify-content: center;
   align-items: center;
-  padding: 15px;
-  border-radius: 50%;
-  background-color: #fff;
 }
 .button--play {
   padding-left: 18px;
@@ -320,6 +320,16 @@ body {
 }
 .button--pause {
   display: none;
+}
+.button svg {
+  width: 24px;
+  height: 24px;
+}
+@media only screen and (max-width: 768px) {
+  .button svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 /* ARTIST */
