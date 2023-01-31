@@ -315,4 +315,10 @@ body {
 /* FOOTER */
 .site-footer {
   background-color: #262d4e;
+}
+@media only screen and (max-width: 576px) {
+  .site-footer {
+    display: flex;
+    justify-content: center;
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -1,4 +1,9 @@
 /* FOOTER */
 .site-footer {
   background-color: #262d4e;
+
+  @media only screen and (max-width: $mobile) {
+    display: flex;
+    justify-content: center;
+  }
 }
