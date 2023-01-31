@@ -15,6 +15,136 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container">
+        <div class="site-header__inner">
+          <div class="site-header__logo logo">
+            <a class="logo__link" href="">
+              <img
+                class="logo__img"
+                src="images/logo.svg"
+                alt="deezer logo"
+                width="144"
+                height="28"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /HEADER -->
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <!-- PLAYLIST -->
+      <section class="info-card page">
+        <h2 class="page__title info-card__title">Playlist</h2>
+        <div class="page__wrapper container" data-playlist-page-wrapper></div>
+      </section>
+      <!-- /PLAYLIST -->
+
+      <!-- TRACKS -->
+      <section class="info-card tracks">
+        <h2 class="tracks__title info-card__title">Tracks</h2>
+        <div
+          class="tracks__wrapper container info-card__wrapper"
+          data-playlist-page-track-wrapper
+        ></div>
+      </section>
+      <!-- /TRACKS -->
+    </main>
+    <!-- /MAIN CONTENT -->
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__inner">
+          <div class="site-footer__logo logo">
+            <h1>
+              <a class="logo__link" href="/">
+                <img
+                  class="logo__img"
+                  src="images/logo-white.svg"
+                  alt="deezer white logo"
+                  width="144"
+                  height="28"
+                />
+              </a>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- /FOOTER -->
+
+    <!-- PLAYLISTS TEMPLATE -->
+    <template data-playlist-template>
+      <div class="playlist-card card info-card__card">
+        <div class="playlist-card__img-wrapper card-body">
+          <img data-playlist-img />
+        </div>
+        <div class="playlist-card__content card-body info-card__card-content">
+          <h3
+            class="playlist-card__title info-card__card-title"
+            data-playlist-title
+          ></h3>
+          <p
+            class="playlist-card__desc-text info-card__card-desc"
+            data-playlist-desc-text
+          ></p>
+        </div>
+      </div>
+    </template>
+    <!-- /PLAYLISTS TEMPLATE -->
+
+    <!-- TRACKS TEMPLATE -->
+    <template data-track-template>
+      <div class="track-card card info-card__card swiper-slide">
+        <div class="track-card__img-wrapper card-body">
+          <img data-track-img />
+          <div class="track-card__buttons">
+            <!-- play button -->
+            <button class="button button--play" data-play-btn>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="-1.5 0 24 24"
+                id="meteor-icon-kit__solid-play"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M0 2.00304V22.003C0 23.5499 1.68077 24.5112 3.01404 23.7269L20.014 13.7269C21.3287 12.9536 21.3287 11.0525 20.014 10.2792L3.01404 0.279167C1.68077 -0.505108 0 0.456203 0 2.00304z"
+                  fill="#292D32"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="track-card__content card-body info-card__card-content">
+          <h2
+            class="track-card__title card-title info-card__card-title"
+            data-track-title
+          ></h2>
+          <p
+            class="track-card__album-text card-text info-card__card-text"
+            data-track-album-text
+          ></p>
+          <p
+            class="track-card__name-text card-text info-card__card-text"
+            data-track-name-text
+          ></p>
+        </div>
+      </div>
+    </template>
+    <!-- /TRACKS TEMPLATE -->
+
+    <!-- AUDIO -->
+    <audio data-music></audio>
+
     <!-- SCRIPTS -->
     <script src="js/main.js"></script>
     <script src="js/playlist.js"></script>

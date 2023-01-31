@@ -281,11 +281,11 @@ body {
 }
 
 /* ARTIST */
-.artist:not(:last-child) {
+.page:not(:last-child) {
   margin-bottom: 100px;
 }
 
-.artist__wrapper {
+.page__wrapper {
   display: flex;
   justify-content: center;
 }

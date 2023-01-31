@@ -10,8 +10,7 @@ async function getArtistData(resource, id) {
 
   const resTracks = await fetch(`${resource}/${id}/top?limit=50`)
   const searchTracksResult = await resTracks.json()
-  console.log(searchTracksResult);
-  fillArtistInfo(searchResult)
+  renderArtistInfo(searchResult)
 
   renderTracksTop(searchTracksResult.data)
 }
@@ -19,17 +18,17 @@ async function getArtistData(resource, id) {
 getArtistData(API_ARTIST, artistId)
 
 
-function fillArtistInfo(artist) {
+function renderArtistInfo(artist) {
   const elArtistPageCard = elArtistTemplate.content.cloneNode(true)
   const elArtistPageCardImg = elArtistPageCard.querySelector("[data-artist-img]")
-  
+
   elArtistPageCardImg.src = artist.picture_big
   elArtistPageCardImg.alt = artist.name
   elArtistPageCardImg.width = 250
   elArtistPageCardImg.height = 250
   elArtistPageCard.querySelector("[data-artist-name]").textContent = artist.name
   elArtistPageCard.querySelector("[data-artist-job-text]").textContent = artist.type
-  
+
   elArtistPageWrapper.appendChild(elArtistPageCard)
 }
 
