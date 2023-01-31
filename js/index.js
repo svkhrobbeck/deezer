@@ -12,6 +12,7 @@ getData(API)
 
 // Render Artists function
 function renderArtists(artists) {
+  elArtistsWrapper.innerHTML = ""
 
   artists.forEach(artist => {
     const elArtistCard = elArtistTemplate.content.cloneNode(true)
@@ -30,6 +31,7 @@ function renderArtists(artists) {
 
 // Render Playlists function
 function renderPlaylists(playlists) {
+  elPlaylistsWrapper.innerHTML = ""
 
   playlists.forEach(playlist => {
     const elPlaylistCard = elPlaylistTemplate.content.cloneNode(true)
@@ -68,7 +70,7 @@ function renderTracks(tracks) {
 // Render podcasts function
 function renderPodcasts(podcasts) {
   elTPodcastsWrapper.innerHTML = ""
-  
+
   podcasts.forEach(podcast => {
     const elPodcastCard = elPodcastTemplate.content.cloneNode(true)
     const elPodcastCardImg = elPodcastCard.querySelector("[data-podcast-img]")
