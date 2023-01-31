@@ -102,6 +102,11 @@
   opacity: 0;
   transition: transform 0.5s ease, opacity 0.5s ease;
 
+  @media only screen and (max-width: $tablet) {
+    transform: 1;
+    opacity: 1;
+  }
+
   &--play {
     padding-left: 18px;
     padding-right: 12px;
