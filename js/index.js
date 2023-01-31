@@ -48,6 +48,7 @@ function renderPlaylists(playlists) {
 
 // Render tracks function
 function renderTracks(tracks) {
+  elTracksWrapper.innerHTML = ""
 
   tracks.forEach(track => {
     const elTrackCard = elTrackTemplate.content.cloneNode(true)
@@ -66,7 +67,8 @@ function renderTracks(tracks) {
 
 // Render podcasts function
 function renderPodcasts(podcasts) {
-
+  elTPodcastsWrapper.innerHTML = ""
+  
   podcasts.forEach(podcast => {
     const elPodcastCard = elPodcastTemplate.content.cloneNode(true)
     const elPodcastCardImg = elPodcastCard.querySelector("[data-podcast-img]")
@@ -87,8 +89,8 @@ const swiper = new Swiper('.swiper', {
 
   direction: "horizontal",
   speed: 400,
-  spaceBetween: 10,
   slidesPerView: 2,
+  spaceBetween: 10,
   loop: false,
   pagination: {
     el: '.swiper-pagination',
@@ -104,7 +106,7 @@ const swiper = new Swiper('.swiper', {
     el: '.swiper-scrollbar',
   },
 
-
+  // breakpoints
   breakpoints: {
     400: {
       slidesPerView: 3,
