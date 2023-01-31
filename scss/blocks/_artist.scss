@@ -1,0 +1,11 @@
+/* ARTIST */
+.artist {
+  &:not(:last-child) {
+    margin-bottom: 100px;
+  }
+}
+
+.artist__wrapper {
+  display: flex;
+  justify-content: center;
+}

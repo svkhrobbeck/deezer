@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deezer - Sukhrobbek</title>
 
+    <!-- Swiper Slider -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.png" />
 
@@ -39,38 +45,35 @@
     <!-- MAIN CONTENT -->
     <main class="main-content">
       <!-- ARTISTS -->
-      <section class="artists info-card">
-        <div class="container">
-          <h2 class="artists__title info-card__title">Artists</h2>
-          <div
-            class="artists__wrapper info-card__wrapper"
-            data-artists-wrapper
-          ></div>
-        </div>
+      <section class="info-card swiper">
+        <h2 class="artists__title info-card__title">Artists</h2>
+        <div class="swiper-wrapper" data-artists-wrapper></div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
       </section>
       <!-- /ARTISTS -->
 
       <!-- PLAYLISTS -->
-      <section class="playlists info-card">
-        <div class="container">
-          <h2 class="playlists__title info-card__title">Playlists</h2>
-          <div
-            class="playlists__wrapper info-card__wrapper"
-            data-playlists-wrapper
-          ></div>
-        </div>
+      <section class="info-card swiper">
+        <h2 class="playlists__title info-card__title">Playlists</h2>
+        <div class="swiper-wrapper" data-playlists-wrapper></div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
       </section>
       <!-- /PLAYLISTS -->
 
       <!-- TRACKS -->
-      <section class="tracks info-card">
-        <div class="container">
-          <h2 class="tracks__title info-card__title">Tracks</h2>
-          <div
-            class="tracks__wrapper info-card__wrapper"
-            data-tracks-wrapper
-          ></div>
-        </div>
+      <section class="info-card swiper">
+        <h2 class="tracks__title info-card__title">Tracks</h2>
+        <div class="swiper-wrapper" data-tracks-wrapper></div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
       </section>
       <!-- /TRACKS -->
     </main>
@@ -100,7 +103,7 @@
 
     <!-- ARTISTS TEMPLATE -->
     <template data-artist-template>
-      <div class="artist-card card info-card__card">
+      <div class="artist-card card info-card__card swiper-slide">
         <div class="artist-card__img-wrapper card-body">
           <img data-artist-img />
         </div>
@@ -126,7 +129,7 @@
 
     <!-- PLAYLISTS TEMPLATE -->
     <template data-playlist-template>
-      <div class="playlist-card card info-card__card">
+      <div class="playlist-card card info-card__card swiper-slide">
         <div class="playlist-card__img-wrapper card-body">
           <img data-playlist-img />
         </div>
@@ -152,7 +155,7 @@
 
     <!-- TRACKS TEMPLATE -->
     <template data-track-template>
-      <div class="track-card card info-card__card">
+      <div class="track-card card info-card__card swiper-slide">
         <div class="track-card__img-wrapper card-body">
           <img data-track-img />
           <div class="track-card__buttons">
@@ -193,6 +196,7 @@
     <!-- AUDIO -->
     <audio data-music></audio>
     <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/index.js"></script>
   </body>

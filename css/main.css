@@ -164,6 +164,13 @@ body {
   margin-bottom: 20px;
 }
 
+.swiper {
+  padding: 15px;
+  max-width: 1240px;
+  width: 100%;
+  overflow: hidden;
+}
+
 .info-card__wrapper {
   display: flex;
   gap: 20px;
@@ -175,6 +182,7 @@ body {
 .info-card__card {
   max-width: 250px;
   width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -191,7 +199,7 @@ body {
 }
 
 .info-card__card-title {
-  font-size: 18px;
+  font-size: 16px;
   margin-top: auto;
 }
 
@@ -237,6 +245,16 @@ body {
 .button--play {
   padding-left: 18px;
   padding-right: 12px;
+}
+
+/* ARTIST */
+.artist:not(:last-child) {
+  margin-bottom: 100px;
+}
+
+.artist__wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 /* FOOTER */
