@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
 
-  <body>
+  <body> 
     <!-- HEADER -->
     <header class="site-header">
       <div class="container">
@@ -37,6 +37,23 @@
               />
             </a>
           </div>
+          <!-- SITENAV -->
+          <nav class="sitenav">
+            <ul class="sitenav__list">
+              <li class="sitenav__item">
+                <a class="sitenav__link" href="#artists">Artists</a>
+              </li>
+              <li class="sitenav__item">
+                <a class="sitenav__link" href="#playlists">Playlists</a>
+              </li>
+              <li class="sitenav__item">
+                <a class="sitenav__link" href="#tracks">Tracks</a>
+              </li>
+              <li class="sitenav__item">
+                <a class="sitenav__link" href="#podcasts">Podcasts</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
@@ -45,7 +62,7 @@
     <!-- MAIN CONTENT -->
     <main class="main-content">
       <!-- ARTISTS -->
-      <section class="info-card swiper">
+      <section class="info-card swiper" id="artists">
         <h2 class="artists__title info-card__title">Artists</h2>
         <div class="swiper-wrapper" data-artists-wrapper></div>
         <div class="swiper-pagination"></div>
@@ -56,7 +73,7 @@
       <!-- /ARTISTS -->
 
       <!-- PLAYLISTS -->
-      <section class="info-card swiper">
+      <section class="info-card swiper" id="playlists">
         <h2 class="playlists__title info-card__title">Playlists</h2>
         <div class="swiper-wrapper" data-playlists-wrapper></div>
         <div class="swiper-pagination"></div>
@@ -67,7 +84,7 @@
       <!-- /PLAYLISTS -->
 
       <!-- TRACKS -->
-      <section class="info-card swiper">
+      <section class="info-card swiper" id="tracks">
         <h2 class="tracks__title info-card__title">Tracks</h2>
         <div class="swiper-wrapper" data-tracks-wrapper></div>
         <div class="swiper-pagination"></div>
@@ -76,6 +93,13 @@
         <div class="swiper-scrollbar"></div>
       </section>
       <!-- /TRACKS -->
+
+      <!-- PODCASTS -->
+      <section class="info-card" id="podcasts">
+        <h2 class="tracks__title info-card__title">Podcasts</h2>
+        <div class="info-card__wrapper" data-podcasts-wrapper></div>
+      </section>
+      <!-- /PODCASTS -->
     </main>
     <!-- /MAIN CONTENT -->
 
@@ -192,6 +216,26 @@
       </div>
     </template>
     <!-- /TRACKS TEMPLATE -->
+
+    <!-- PODCASTS TEMPLATE -->
+    <template data-podcast-template>
+      <div class="podcast-card card info-card__card--podcast swiper-slide">
+        <div class="podcast-card__img-wrapper card-body">
+          <img data-podcast-img />
+        </div>
+        <div class="podcast-card__content card-body info-card__card-content">
+          <h2
+            class="podcast-card__title card-title info-card__card-title"
+            data-podcast-title
+          ></h2>
+          <p
+            class="podcast-card__desc-text card-text info-card__card-desc"
+            data-podcast-desc-text
+          ></p>
+        </div>
+      </div>
+    </template>
+    <!-- /PODCASTS TEMPLATE -->
 
     <!-- AUDIO -->
     <audio data-music></audio>

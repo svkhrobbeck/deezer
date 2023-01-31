@@ -6,6 +6,7 @@ async function getData(resource) {
   renderArtists(searchResult.artists.data)
   renderPlaylists(searchResult.playlists.data)
   renderTracks(searchResult.tracks.data)
+  renderPodcasts(searchResult.podcasts.data)
 }
 getData(API)
 
@@ -63,6 +64,22 @@ function renderTracks(tracks) {
   })
 }
 
+// Render podcasts function
+function renderPodcasts(podcasts) {
+
+  podcasts.forEach(podcast => {
+    const elPodcastCard = elPodcastTemplate.content.cloneNode(true)
+    const elPodcastCardImg = elPodcastCard.querySelector("[data-podcast-img]")
+
+    elPodcastCardImg.src = podcast.picture_big
+    elPodcastCardImg.width = 300
+    elPodcastCardImg.height = 300
+    elPodcastCard.querySelector("[data-podcast-title]").textContent = podcast.title
+    elPodcastCard.querySelector("[data-podcast-desc-text]").textContent = podcast.description
+
+    elTPodcastsWrapper.appendChild(elPodcastCard)
+  })
+}
 
 
 // Swiper

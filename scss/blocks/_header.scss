@@ -4,11 +4,29 @@
   background-color: #fff;
 }
 
-// .site-header__inner
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 /* LOGO */
 .logo__img {
   max-width: 144px;
   width: 100%;
   height: auto;
+}
+
+/* SITENAV */
+.sitenav__list {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  list-style-type: none;
+}
+
+.sitenav__link {
+  color: #000;
+  font-weight: 400;
+  text-decoration: none;
 }

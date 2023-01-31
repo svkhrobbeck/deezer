@@ -32,6 +32,11 @@
   cursor: pointer;
   background-color: #fff;
 
+  &--podcast {
+    max-width: 300px;
+    height: auto;
+  }
+
   &:hover .button--play {
     transform: scale(1);
     opacity: 1;
@@ -63,6 +68,15 @@
     background: no-repeat center / contain;
     background-image: url("../images/earphone.svg");
   }
+}
+
+.info-card__card-desc {
+  overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 10; /* number of lines to show */
+       line-clamp: 10; 
+-webkit-box-orient: vertical;
 }
 
 /* BUTTON */
