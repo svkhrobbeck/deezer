@@ -25,6 +25,7 @@ function onPlayBtnClick(evt) {
   const elTarget = evt.target.closest("[data-play-btn]")
 
   if (!elTarget) return
+  
   elTarget.style.display = "none"
   elTarget.nextElementSibling.style.display = "flex"
 
@@ -34,11 +35,6 @@ function onPlayBtnClick(evt) {
 
   if (elAudio.paused) {
     elAudio.play()
-  }
-
-  if (elAudio.src !== elTarget.dataset.trackURL) {
-    elTarget.style.display = "flex"
-    elTarget.nextElementSibling.style.display = "none"
   }
 }
 
@@ -58,7 +54,6 @@ function onPauseBtnClick(evt) {
 
   }
 }
-
 // Header scroll evt
 window.addEventListener('scroll', () => {
   ElSiteHeader.classList.toggle('sticky', window.scrollY > 0);

@@ -213,7 +213,7 @@ body {
 }
 
 .swiper {
-  padding: 35px 15px;
+  padding: 35px 15px 35px 0;
   max-width: 1240px;
   width: 100%;
   margin: 0 auto;
@@ -222,6 +222,7 @@ body {
 
 .info-card__wrapper {
   padding: 10px;
+  gap: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -297,7 +298,6 @@ body {
   }
 }
 
-/* BUTTON */
 .button {
   border: none;
   background-color: transparent;
@@ -340,6 +340,7 @@ body {
 @media only screen and (max-width: 576px) {
   .site-footer__inner {
     flex-direction: column;
+    padding-bottom: 10px;
   }
 }
 
