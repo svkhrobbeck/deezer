@@ -87,8 +87,8 @@ const swiper = new Swiper('.swiper', {
 
   direction: "horizontal",
   speed: 400,
-  spaceBetween: 20,
-  slidesPerView: 5,
+  spaceBetween: 10,
+  slidesPerView: 2,
   loop: false,
   pagination: {
     el: '.swiper-pagination',
@@ -103,4 +103,26 @@ const swiper = new Swiper('.swiper', {
   scrollbar: {
     el: '.swiper-scrollbar',
   },
+
+
+  breakpoints: {
+    400: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    },
+  },
+
+  breakpoints: {
+    760: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+  },
+
+  breakpoints: {
+    1240: {
+      slidesPerView: 5,
+      spaceBetween: 25,
+    },
+  }
 });

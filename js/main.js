@@ -17,6 +17,7 @@ const elAudio = document.querySelector("[data-music]")
 
 document.addEventListener("click", evt => {
   onPlayBtnClick(evt)
+  onPauseBtnClick(evt)
 })
 
 // play button function 
@@ -24,6 +25,8 @@ function onPlayBtnClick(evt) {
   const elTarget = evt.target.closest("[data-play-btn]")
 
   if (!elTarget) return
+  elTarget.style.display = "none"
+  elTarget.nextElementSibling.style.display = "flex"
 
   if (elAudio.src !== elTarget.dataset.trackURL) {
     elAudio.src = elTarget.dataset.trackURL
@@ -31,8 +34,28 @@ function onPlayBtnClick(evt) {
 
   if (elAudio.paused) {
     elAudio.play()
-  } else {
+  }
+
+  if (elAudio.src !== elTarget.dataset.trackURL) {
+    elTarget.style.display = "flex"
+    elTarget.nextElementSibling.style.display = "none"
+  }
+}
+
+
+// play button function 
+function onPauseBtnClick(evt) {
+  const elTarget = evt.target.closest("[data-pause-btn]")
+
+  if (!elTarget) return
+
+  elTarget.style.display = "none"
+  elTarget.previousElementSibling.style.display = "flex"
+
+  if (!elAudio.paused) {
     elAudio.pause()
+  } else {
+
   }
 }
 
