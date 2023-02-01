@@ -86,10 +86,10 @@ function onSearchBtnClick(evt) {
 
   elTarget.querySelector("img").src = "images/icon-close.svg"
   elSearchInput.classList.toggle("show")
-  elLogo.style.display = "none"
+  elLogo.classList.add("true")
   
   if (!elSearchInput.classList.contains("show")) {
-    elLogo.style.display = "block"
+    elLogo.classList.remove("true")
     setTimeout(() => {
       elTarget.querySelector("img").src = "images/icon-search.svg"
     }, 700)

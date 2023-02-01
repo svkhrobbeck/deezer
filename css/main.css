@@ -244,9 +244,13 @@ body {
 .site-header__logo {
   margin-right: 10px;
 }
+.site-header__logo.true {
+  display: block;
+}
 @media only screen and (max-width: 768px) {
   .site-header__logo {
     margin-right: 30px;
+    display: none;
   }
 }
 
