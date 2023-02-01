@@ -47,6 +47,7 @@ function onPauseBtnClick(evt) {
   }
 }
 
+// Audio ended
 elAudio.addEventListener("ended", () => {
   const elPlayBtn = document.querySelectorAll("[data-play-btn]")
   const elPauseBtn = document.querySelectorAll("[data-pause-btn]")
@@ -66,7 +67,6 @@ window.addEventListener('scroll', () => {
 });
 
 // Loader
-
 function loader(state) {
   if (state) {
     elLoader.classList.remove("hidden")
