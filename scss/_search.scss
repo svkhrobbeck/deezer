@@ -3,11 +3,6 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-
-  
-  @media only screen and (max-width: $tablet) {
-    display: none;
-   }
 }
 
 /* SEARCH */
@@ -34,9 +29,10 @@
       padding: 7px 7px 7px 40px;
       max-width: 250px;
     }
-  }
 
-  @media only screen and (max-width: $tablet) {
-    display: none;
+    @media only screen and (max-width: $tablet) {
+      padding: 5px 5px 5px 40px;
+      max-width: 170px;
+    }
   }
 }

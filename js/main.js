@@ -10,11 +10,13 @@ const ElSiteHeader = document.querySelector("[data-site-header]")
 const elLoader = document.querySelector("[data-loader]")
 const elSearchTogglerBtn = document.querySelector("[data-search-toggler]")
 const elSearchInput = document.querySelector("[data-search-input]")
+const elLogo = document.querySelector("[data-logo]")
 
 
 document.addEventListener("click", evt => {
   onPlayBtnClick(evt)
   onPauseBtnClick(evt)
+  onSearchBtnClick(evt)
 })
 
 // play button function 
@@ -77,8 +79,19 @@ function loader(state) {
   }
 }
 
-// Search toggler
-elSearchTogglerBtn.addEventListener("click", () => {
-  elSearchInput.classList.add("show")
-  elSearchTogglerBtn.style.display = "none"
-})
+function onSearchBtnClick(evt) {
+  const elTarget = evt.target.closest("[data-search-toggler]")
+
+  if (!elTarget) return
+
+  elTarget.querySelector("img").src = "images/icon-close.svg"
+  elSearchInput.classList.toggle("show")
+  elLogo.style.display = "none"
+  
+  if (!elSearchInput.classList.contains("show")) {
+    elLogo.style.display = "block"
+    setTimeout(() => {
+      elTarget.querySelector("img").src = "images/icon-search.svg"
+    }, 700)
+  }
+}
