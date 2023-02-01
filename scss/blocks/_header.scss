@@ -2,7 +2,8 @@
 .site-header {
   padding: 20px 0;
   background-color: #fff;
-  transition: padding 0.5s ease, background-color .5s ease, backdrop-filter .5s ease;
+  transition: padding 0.5s ease, background-color 0.5s ease,
+    backdrop-filter 0.5s ease;
 
   &.sticky {
     position: fixed;
@@ -27,10 +28,21 @@
 }
 
 /* LOGO */
+.site-header__logo {
+  margin-right: 10px;
+}
+
 .logo__img {
   max-width: 144px;
   width: 100%;
   height: auto;
+}
+
+/* HEADER RIGHT */
+.site-header__right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 /* SITENAV */
@@ -44,6 +56,7 @@
   display: flex;
   align-items: center;
   margin: 0;
+  padding: 0;
   gap: 35px;
   list-style-type: none;
 }

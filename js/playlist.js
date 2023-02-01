@@ -21,6 +21,7 @@ async function getPlaylistData(resource, id) {
   renderTracksPlaylist(searchTracksResult.data)
 }
 
+
 getPlaylistData(API_PLAYLIST, playlistId)
 
 // Render playlist info
@@ -28,7 +29,8 @@ function renderPlaylistInfo(playlist) {
   if (!playlist.error) {
     const elPlaylistPageCard = elPlaylistTemplate.content.cloneNode(true)
     const elPlaylistPageCardImg = elPlaylistPageCard.querySelector("[data-playlist-img]")
-
+    
+    document.title = `${playlist.title}`
     document.querySelector("[data-playlist-page-title]").textContent = "Playlist"
     elPlaylistPageCardImg.src = playlist.picture_big
     elPlaylistPageCardImg.alt = playlist.title

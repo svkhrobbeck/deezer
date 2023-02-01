@@ -20,7 +20,7 @@
       <div class="container">
         <div class="site-header__inner">
           <div class="site-header__logo logo">
-            <a class="logo__link" href="index.html">
+            <a class="logo__link" href="/">
               <img
                 class="logo__img"
                 src="images/logo.svg"
@@ -29,6 +29,35 @@
                 height="28"
               />
             </a>
+          </div>
+          <div class="site-header__right">
+            <!-- SEARCH TOGGLER -->
+            <button class="search-toggler" type="button" data-search-toggler>
+              <img src="images/icon-search.svg" alt="search icon">
+            </button>
+
+            <!-- SEARCH FORM -->
+            <form class="search-form" action="search.html" data-search-form>
+              <input class="search-form__input" placeholder="Search" type="search" name="query" data-search-input>
+            </form>
+
+            <!-- SITENAV -->
+            <nav class="sitenav">
+              <ul class="sitenav__list">
+                <li class="sitenav__item">
+                  <a class="sitenav__link" href="#artists">Artists</a>
+                </li>
+                <li class="sitenav__item">
+                  <a class="sitenav__link" href="#playlists">Playlists</a>
+                </li>
+                <li class="sitenav__item">
+                  <a class="sitenav__link" href="#tracks">Tracks</a>
+                </li>
+                <li class="sitenav__item">
+                  <a class="sitenav__link" href="#podcasts">Podcasts</a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>

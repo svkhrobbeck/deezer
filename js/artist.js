@@ -24,11 +24,13 @@ async function getArtistData(resource, id) {
 
 getArtistData(API_ARTIST, artistId)
 
+
 // Render artist info
 function renderArtistInfo(artist) {
   const elArtistPageCard = elArtistTemplate.content.cloneNode(true)
   const elArtistPageCardImg = elArtistPageCard.querySelector("[data-artist-img]")
-
+  
+  document.title = `${artist.name}`
   document.querySelector("[data-artist-page-title]").textContent = "Artist"
   elArtistPageCardImg.src = artist.picture_big
   elArtistPageCardImg.alt = artist.name

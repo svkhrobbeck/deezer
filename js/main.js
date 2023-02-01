@@ -8,6 +8,8 @@ const elPodcastTemplate = document.querySelector("[data-podcast-template]")
 const elAudio = document.querySelector("[data-music]")
 const ElSiteHeader = document.querySelector("[data-site-header]")
 const elLoader = document.querySelector("[data-loader]")
+const elSearchTogglerBtn = document.querySelector("[data-search-toggler]")
+const elSearchInput = document.querySelector("[data-search-input]")
 
 
 document.addEventListener("click", evt => {
@@ -74,3 +76,9 @@ function loader(state) {
     elLoader.classList.add("hidden")
   }
 }
+
+// Search toggler
+elSearchTogglerBtn.addEventListener("click", () => {
+  elSearchInput.classList.add("show")
+  elSearchTogglerBtn.style.display = "none"
+})

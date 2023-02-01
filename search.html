@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Artist</title>
+    <title>Search</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.png" />
@@ -68,8 +68,11 @@
     <main class="main-content">
       <!-- ARTIST -->
       <section class="info-card page">
-        <h2 class="page__title info-card__title" data-artist-page-title></h2>
-        <div class="page__wrapper container" data-artists-page-wrapper></div>
+        <h2 class="page__title info-card__title" data-search-page-title></h2>
+        <div
+          class="page__wrapper container info-card__wrapper"
+          data-search-page-wrapper
+        ></div>
       </section>
       <!-- /ARTIST -->
 
@@ -77,11 +80,11 @@
       <section class="info-card tracks">
         <h2
           class="tracks__title info-card__title"
-          data-artist-page-tracks-title
+          data-search-page-tracks-title
         ></h2>
         <div
           class="tracks__wrapper container info-card__wrapper"
-          data-artists-page-track-wrapper
+          data-search-page-track-wrapper
         ></div>
       </section>
       <!-- /TRACKS -->
@@ -118,26 +121,6 @@
       </div>
     </footer>
     <!-- /FOOTER -->
-
-    <!-- ARTISTS TEMPLATE -->
-    <template data-artist-template>
-      <div class="artist-card card info-card__card">
-        <div class="artist-card__img-wrapper card-body">
-          <img data-artist-img />
-        </div>
-        <div class="artist-card__content card-body info-card__card-content">
-          <h3
-            class="artist-card__name info-card__card-title"
-            data-artist-name
-          ></h3>
-          <p
-            class="artist-card__job-text info-card__card-text"
-            data-artist-job-text
-          ></p>
-        </div>
-      </div>
-    </template>
-    <!-- /ARTISTS TEMPLATE -->
 
     <!-- TRACKS TEMPLATE -->
     <template data-track-template>
@@ -213,6 +196,6 @@
 
     <!-- SCRIPTS -->
     <script src="js/main.js"></script>
-    <script src="js/artist.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>
