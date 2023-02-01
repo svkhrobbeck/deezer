@@ -282,6 +282,16 @@ body {
   align-items: center;
   gap: 20px;
 }
+@media only screen and (max-width: 768px) {
+  .site-header__right {
+    gap: 15px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .site-header__right {
+    gap: 10px;
+  }
+}
 
 /* SITENAV */
 @media only screen and (max-width: 768px) {

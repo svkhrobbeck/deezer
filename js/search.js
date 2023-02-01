@@ -24,14 +24,12 @@ document.title = `${(searchQuery).charAt().toUpperCase() + (searchQuery).slice(1
 
 // Render tracks function
 function renderSearchedTracks(tracks) {
-  
+
   tracks.forEach(track => {
     const elSearchTrackCard = elTrackTemplate.content.cloneNode(true)
     const elSearchTrackCardImg = elSearchTrackCard.querySelector("[data-track-img]")
-    
-    console.log(track);
-    
-    document.querySelector("[data-search-page-tracks-title]").textContent = `Tracks of ${(searchQuery).charAt().toUpperCase() + (searchQuery).slice(1)}` 
+
+    document.querySelector("[data-search-page-tracks-title]").textContent = `Tracks of ${(searchQuery).charAt().toUpperCase() + (searchQuery).slice(1)}`
     elSearchTrackCardImg.src = track.album.cover_big
     elSearchTrackCardImg.width = 250
     elSearchTrackCardImg.height = 250
