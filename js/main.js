@@ -51,6 +51,26 @@ function onPauseBtnClick(evt) {
   }
 }
 
+// Click search button
+function onSearchBtnClick(evt) {
+  const elTarget = evt.target.closest("[data-search-toggler]")
+
+  if (!elTarget) return
+
+  elTarget.querySelector("img").src = "images/icon-close.svg"
+  elSearchInput.classList.toggle("show")
+  elLogo.classList.remove("true")
+
+  if (!elSearchInput.classList.contains("show")) {
+    setTimeout(() => {
+      elLogo.classList.add("true")
+    }, 200)
+    setTimeout(() => {
+      elTarget.querySelector("img").src = "images/icon-search.svg"
+    }, 700)
+  }
+}
+
 // Audio ended
 elAudio.addEventListener("ended", () => {
   const elPlayBtn = document.querySelectorAll("[data-play-btn]")
@@ -76,22 +96,5 @@ function loader(state) {
     elLoader.classList.remove("hidden")
   } else {
     elLoader.classList.add("hidden")
-  }
-}
-
-function onSearchBtnClick(evt) {
-  const elTarget = evt.target.closest("[data-search-toggler]")
-
-  if (!elTarget) return
-
-  elTarget.querySelector("img").src = "images/icon-close.svg"
-  elSearchInput.classList.toggle("show")
-  elLogo.classList.remove("true")
-
-  if (!elSearchInput.classList.contains("show")) {
-    elLogo.classList.add("true")
-    setTimeout(() => {
-      elTarget.querySelector("img").src = "images/icon-search.svg"
-    }, 700)
   }
 }
