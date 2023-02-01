@@ -7,7 +7,7 @@ const elPodcastTemplate = document.querySelector("[data-podcast-template]")
 
 const elAudio = document.querySelector("[data-music]")
 const ElSiteHeader = document.querySelector("[data-site-header]")
-
+const elLoader = document.querySelector("[data-loader]")
 
 
 document.addEventListener("click", evt => {
@@ -64,3 +64,13 @@ elAudio.addEventListener("ended", () => {
 window.addEventListener('scroll', () => {
   ElSiteHeader.classList.toggle('sticky', window.scrollY > 0);
 });
+
+// Loader
+
+function loader(state) {
+  if (state) {
+    elLoader.classList.remove("hidden")
+  } else {
+    elLoader.classList.add("hidden")
+  }
+}

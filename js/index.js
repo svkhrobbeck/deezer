@@ -5,12 +5,18 @@ const elTPodcastsWrapper = document.querySelector("[data-podcasts-wrapper]")
 
 // GetData function
 async function getData(resource) {
+
+  loader(true)
+  
   const res = await fetch(resource)
   const searchResult = await res.json()
   renderArtists(searchResult.artists.data)
   renderPlaylists(searchResult.playlists.data)
   renderTracks(searchResult.tracks.data)
   renderPodcasts(searchResult.podcasts.data)
+
+  loader(false)
+  
 }
 getData(API)
 
@@ -22,6 +28,7 @@ function renderArtists(artists) {
     const elArtistCard = elArtistTemplate.content.cloneNode(true)
     const elArtistCardImg = elArtistCard.querySelector("[data-artist-img]")
 
+    document.querySelector("[data-artists-title]").textContent = "Artists"
     elArtistCardImg.src = artist.picture_big
     elArtistCardImg.width = 250
     elArtistCardImg.height = 250
@@ -41,6 +48,7 @@ function renderPlaylists(playlists) {
     const elPlaylistCard = elPlaylistTemplate.content.cloneNode(true)
     const elPlaylistCardImg = elPlaylistCard.querySelector("[data-playlist-img]")
 
+    document.querySelector("[data-playlists-title]").textContent = "Playlists"
     elPlaylistCardImg.src = playlist.picture_big
     elPlaylistCardImg.width = 250
     elPlaylistCardImg.height = 250
@@ -60,6 +68,7 @@ function renderTracks(tracks) {
     const elTrackCard = elTrackTemplate.content.cloneNode(true)
     const elTrackCardImg = elTrackCard.querySelector("[data-track-img]")
 
+    document.querySelector("[data-tracks-title]").textContent = "Tracks"
     elTrackCardImg.src = track.artist.picture_big
     elTrackCardImg.width = 250
     elTrackCardImg.height = 250
@@ -79,6 +88,7 @@ function renderPodcasts(podcasts) {
     const elPodcastCard = elPodcastTemplate.content.cloneNode(true)
     const elPodcastCardImg = elPodcastCard.querySelector("[data-podcast-img]")
 
+    document.querySelector("[data-podcasts-title]").textContent = "Podcasts"
     elPodcastCardImg.src = podcast.picture_big
     elPodcastCardImg.width = 300
     elPodcastCardImg.height = 300

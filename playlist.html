@@ -39,14 +39,14 @@
     <main class="main-content">
       <!-- PLAYLIST -->
       <section class="info-card page">
-        <h2 class="page__title info-card__title">Playlist</h2>
+        <h2 class="page__title info-card__title" data-playlist-page-title></h2>
         <div class="page__wrapper container" data-playlist-page-wrapper></div>
       </section>
       <!-- /PLAYLIST -->
 
       <!-- TRACKS -->
       <section class="info-card tracks">
-        <h2 class="tracks__title info-card__title">Tracks</h2>
+        <h2 class="tracks__title info-card__title" data-playlist-page-tracks-title></h2>
         <div
           class="tracks__wrapper container info-card__wrapper"
           data-playlist-page-track-wrapper
@@ -172,6 +172,12 @@
 
     <!-- AUDIO -->
     <audio data-music></audio>
+
+    <!-- LOADER -->
+    <div class="loader hidden" data-loader>
+      <img class="loader__img" src="images/spinner.svg" alt="spinner" />
+    </div>
+    <!-- /LOADER -->
 
     <!-- SCRIPTS -->
     <script src="js/main.js"></script>

@@ -4,12 +4,18 @@ const playlistId = new URLSearchParams(window.location.search).get("id")
 const elPlaylistPageWrapper = document.querySelector("[data-playlist-page-wrapper]")
 const elPlaylistPageTrackWrapper = document.querySelector("[data-playlist-page-track-wrapper]")
 
+// Get data
 async function getPlaylistData(resource, id) {
+
+  loader(true)
+
   const res = await fetch(`${resource}/${id}`)
   const searchResult = await res.json()
 
   const resTracks = await fetch(`${resource}/${id}/tracks`)
   const searchTracksResult = await resTracks.json()
+
+  loader(false)
 
   renderPlaylistInfo(searchResult)
   renderTracksPlaylist(searchTracksResult.data)
@@ -17,11 +23,13 @@ async function getPlaylistData(resource, id) {
 
 getPlaylistData(API_PLAYLIST, playlistId)
 
+// Render playlist info
 function renderPlaylistInfo(playlist) {
   if (!playlist.error) {
     const elPlaylistPageCard = elPlaylistTemplate.content.cloneNode(true)
     const elPlaylistPageCardImg = elPlaylistPageCard.querySelector("[data-playlist-img]")
 
+    document.querySelector("[data-playlist-page-title]").textContent = "Playlist"
     elPlaylistPageCardImg.src = playlist.picture_big
     elPlaylistPageCardImg.alt = playlist.title
     elPlaylistPageCardImg.width = 250
@@ -41,6 +49,7 @@ function renderTracksPlaylist(tracks) {
     const elPlaylistTrackCard = elTrackTemplate.content.cloneNode(true)
     const elPlaylistTrackCardImg = elPlaylistTrackCard.querySelector("[data-track-img]")
 
+    document.querySelector("[data-playlist-page-tracks-title]").textContent = "Tracks"
     elPlaylistTrackCardImg.src = track.album.cover_big
     elPlaylistTrackCardImg.width = 250
     elPlaylistTrackCardImg.height = 250

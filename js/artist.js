@@ -4,12 +4,19 @@ const artistId = new URLSearchParams(window.location.search).get("id")
 const elArtistPageWrapper = document.querySelector("[data-artists-page-wrapper]")
 const elArtistPageTrackWrapper = document.querySelector("[data-artists-page-track-wrapper]")
 
+// get Data
 async function getArtistData(resource, id) {
+
+  loader(true)
+
   const res = await fetch(`${resource}/${id}`)
   const searchResult = await res.json()
 
   const resTracks = await fetch(`${resource}/${id}/top?limit=50`)
   const searchTracksResult = await resTracks.json()
+
+  loader(false)
+
   renderArtistInfo(searchResult)
 
   renderTracksTop(searchTracksResult.data)
@@ -17,11 +24,12 @@ async function getArtistData(resource, id) {
 
 getArtistData(API_ARTIST, artistId)
 
-
+// Render artist info
 function renderArtistInfo(artist) {
   const elArtistPageCard = elArtistTemplate.content.cloneNode(true)
   const elArtistPageCardImg = elArtistPageCard.querySelector("[data-artist-img]")
 
+  document.querySelector("[data-artist-page-title]").textContent = "Artist"
   elArtistPageCardImg.src = artist.picture_big
   elArtistPageCardImg.alt = artist.name
   elArtistPageCardImg.width = 250
@@ -39,6 +47,7 @@ function renderTracksTop(tracks) {
     const elArtistTrackCard = elTrackTemplate.content.cloneNode(true)
     const elArtistTrackCardImg = elArtistTrackCard.querySelector("[data-track-img]")
 
+    document.querySelector("[data-artist-page-tracks-title]").textContent = "Tracks"
     elArtistTrackCardImg.src = track.album.cover_big
     elArtistTrackCardImg.width = 250
     elArtistTrackCardImg.height = 250

@@ -63,7 +63,7 @@
     <main class="main-content">
       <!-- ARTISTS -->
       <section class="info-card swiper" id="artists">
-        <h2 class="artists__title info-card__title">Artists</h2>
+        <h2 class="artists__title info-card__title" data-artists-title></h2>
         <div class="swiper-wrapper" data-artists-wrapper></div>
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
@@ -74,7 +74,7 @@
 
       <!-- PLAYLISTS -->
       <section class="info-card swiper" id="playlists">
-        <h2 class="playlists__title info-card__title">Playlists</h2>
+        <h2 class="playlists__title info-card__title" data-playlists-title></h2>
         <div class="swiper-wrapper" data-playlists-wrapper></div>
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
@@ -85,7 +85,7 @@
 
       <!-- TRACKS -->
       <section class="info-card swiper" id="tracks">
-        <h2 class="tracks__title info-card__title">Tracks</h2>
+        <h2 class="tracks__title info-card__title" data-tracks-title></h2>
         <div class="swiper-wrapper" data-tracks-wrapper></div>
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
@@ -96,7 +96,7 @@
 
       <!-- PODCASTS -->
       <section class="info-card" id="podcasts">
-        <h2 class="tracks__title info-card__title">Podcasts</h2>
+        <h2 class="tracks__title info-card__title" data-podcasts-title></h2>
         <div class="info-card__wrapper container" data-podcasts-wrapper></div>
       </section>
       <!-- /PODCASTS -->
@@ -267,6 +267,13 @@
 
     <!-- AUDIO -->
     <audio data-music></audio>
+
+    <!-- LOADER -->
+    <div class="loader hidden" data-loader>
+      <img class="loader__img" src="images/spinner.svg" alt="spinner" />
+    </div>
+    <!-- /LOADER -->
+
     <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
