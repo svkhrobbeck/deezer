@@ -7,7 +7,7 @@ const elTPodcastsWrapper = document.querySelector("[data-podcasts-wrapper]")
 async function getData(resource) {
 
   loader(true)
-  
+
   const res = await fetch(resource)
   const searchResult = await res.json()
   renderArtists(searchResult.artists.data)
@@ -16,7 +16,7 @@ async function getData(resource) {
   renderPodcasts(searchResult.podcasts.data)
 
   loader(false)
-  
+
 }
 getData(API)
 
@@ -47,6 +47,7 @@ function renderPlaylists(playlists) {
   playlists.forEach(playlist => {
     const elPlaylistCard = elPlaylistTemplate.content.cloneNode(true)
     const elPlaylistCardImg = elPlaylistCard.querySelector("[data-playlist-img]")
+    const elPlaylistLink = elPlaylistCard.querySelector("[data-playlist-link]")
 
     document.querySelector("[data-playlists-title]").textContent = "Playlists"
     elPlaylistCardImg.src = playlist.picture_big
@@ -54,7 +55,13 @@ function renderPlaylists(playlists) {
     elPlaylistCardImg.height = 250
     elPlaylistCard.querySelector("[data-playlist-title]").textContent = playlist.title
     elPlaylistCard.querySelector("[data-playlist-type-text]").textContent = playlist.type
-    elPlaylistCard.querySelector("[data-playlist-link]").href = `playlist.html?id=${playlist.id}`
+
+    if (playlist.public) {
+      elPlaylistLink.href = `playlist.html?id=${playlist.id}`
+    } else {
+      elPlaylistLink.removeAttribute("href")
+      elPlaylistLink.style.color = "#777"
+    }
 
     elPlaylistsWrapper.appendChild(elPlaylistCard)
   })
@@ -87,25 +94,28 @@ function renderPodcasts(podcasts) {
   podcasts.forEach(podcast => {
     const elPodcastCard = elPodcastTemplate.content.cloneNode(true)
     const elPodcastCardImg = elPodcastCard.querySelector("[data-podcast-img]")
+    const elPodcastCardTitle = elPodcastCard.querySelector("[data-podcast-title]")
+    const elPodcastCardDesc = elPodcastCard.querySelector("[data-podcast-desc-text]")
 
     document.querySelector("[data-podcasts-title]").textContent = "Podcasts"
     elPodcastCardImg.src = podcast.picture_big
     elPodcastCardImg.width = 300
     elPodcastCardImg.height = 300
-    elPodcastCard.querySelector("[data-podcast-title]").textContent = podcast.title
-    elPodcastCard.querySelector("[data-podcast-desc-text]").textContent = podcast.description
+    elPodcastCardTitle.textContent = podcast.title
+    elPodcastCardTitle.setAttribute("title", `${podcast.title}`)
+    elPodcastCardDesc.textContent = podcast.description
+    elPodcastCardDesc.setAttribute("title", `${podcast.description}`)
 
     elTPodcastsWrapper.appendChild(elPodcastCard)
   })
 }
-
 
 // Swiper slider
 const swiper = new Swiper('.swiper', {
 
   direction: "horizontal",
   speed: 400,
-  slidesPerView: 2,
+  slidesPerView: 1,
   spaceBetween: 10,
   loop: false,
   pagination: {
@@ -122,25 +132,18 @@ const swiper = new Swiper('.swiper', {
     el: '.swiper-scrollbar',
   },
 
-  // breakpoints
   breakpoints: {
     400: {
-      slidesPerView: 3,
+      slidesPerView: 2,
       spaceBetween: 10,
     },
-  },
-
-  breakpoints: {
-    760: {
+    620: {
       slidesPerView: 4,
       spaceBetween: 20,
     },
-  },
-
-  breakpoints: {
-    1240: {
+    1000: {
       slidesPerView: 5,
       spaceBetween: 25,
     },
-  }
+  },
 });

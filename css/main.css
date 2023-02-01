@@ -244,6 +244,11 @@ body {
   overflow: hidden;
 }
 
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
 .info-card__wrapper {
   padding: 10px;
   gap: 20px;
@@ -279,6 +284,9 @@ body {
 .info-card__card-title {
   font-size: 16px;
   margin-top: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .info-card__card-link {
@@ -301,8 +309,8 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 10;
-  line-clamp: 10;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
