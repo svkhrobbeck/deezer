@@ -153,6 +153,17 @@ body {
   display: none;
 }
 
+.loader__img {
+  width: 200px;
+  height: auto;
+  transition: width 0.5s ease;
+}
+@media only screen and (max-width: 768px) {
+  .loader__img {
+    width: 150px;
+  }
+}
+
 /* HEADER */
 .site-header {
   padding: 20px 0;
