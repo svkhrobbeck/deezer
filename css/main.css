@@ -170,6 +170,11 @@ body {
   background-color: transparent;
   cursor: pointer;
 }
+@media only screen and (max-width: 320px) {
+  .search-toggler {
+    display: none;
+  }
+}
 
 /* SEARCH */
 .search-form__input {
@@ -199,13 +204,16 @@ body {
 @media only screen and (max-width: 992px) {
   .search-form__input.show {
     padding: 7px 7px 7px 40px;
-    max-width: 250px;
   }
 }
 @media only screen and (max-width: 768px) {
   .search-form__input.show {
     padding: 5px 5px 5px 40px;
-    max-width: 170px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .search-form__input {
+    display: none;
   }
 }
 
@@ -253,6 +261,12 @@ body {
     display: none;
   }
 }
+@media only screen and (max-width: 320px) {
+  .site-header__logo {
+    margin-right: 0;
+    display: block;
+  }
+}
 
 .logo__img {
   max-width: 144px;
@@ -282,11 +296,27 @@ body {
   gap: 35px;
   list-style-type: none;
 }
+@media only screen and (max-width: 992px) {
+  .sitenav__list {
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sitenav__list {
+    gap: 25px;
+  }
+}
 
 .sitenav__link {
   color: #000;
   font-weight: 400;
   text-decoration: none;
+  font-size: 16px;
+}
+@media only screen and (max-width: 992px) {
+  .sitenav__link {
+    font-size: 15px;
+  }
 }
 
 /* TRACKS */
