@@ -305,7 +305,12 @@ body {
 }
 @media only screen and (max-width: 768px) {
   .sitenav__list {
-    gap: 25px;
+    gap: 15px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .sitenav__list {
+    gap: 10px;
   }
 }
 

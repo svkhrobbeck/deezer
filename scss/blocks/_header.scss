@@ -79,7 +79,11 @@
   }
 
   @media only screen and (max-width: $tablet) {
-    gap: 25px;
+    gap: 15px;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    gap: 10px;
   }
 }
 
