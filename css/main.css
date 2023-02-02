@@ -446,46 +446,49 @@ body {
   .track-card__buttons {
     transform: scale(1);
     opacity: 1;
-    bottom: 25%;
     left: 15%;
     box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.45);
   }
 }
 
-.button {
+.info-button {
   border-radius: 50%;
-  background-color: #fff;
   border: none;
   padding: 15px;
   cursor: pointer;
   justify-content: center;
   align-items: center;
 }
-.button--play {
+@media only screen and (max-width: 768px) {
+  .info-button {
+    padding: 13px;
+  }
+}
+.info-button--play {
   padding-left: 18px;
   padding-right: 12px;
 }
 @media only screen and (max-width: 768px) {
-  .button--play {
-    padding-left: 17px;
-    padding-right: 13px;
+  .info-button--play {
+    padding-left: 14px;
+    padding-right: 12px;
   }
 }
-.button--pause {
+.info-button--pause {
   display: none;
 }
-.button svg {
+.info-button svg {
   width: 24px;
   height: 24px;
 }
 @media only screen and (max-width: 768px) {
-  .button svg {
+  .info-button svg {
     width: 20px;
     height: 20px;
   }
 }
 @media only screen and (max-width: 576px) {
-  .button svg {
+  .info-button svg {
     width: 16px;
     height: 16px;
   }
