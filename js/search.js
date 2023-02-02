@@ -1,6 +1,13 @@
 const API_SEARCH = "https://deezer.humosoft.uz/search?q="
 const searchQuery = new URLSearchParams(window.location.search).get("query")
 
+const searchQueryArr = searchQuery.split(" ")
+let searchResult = ""
+searchQueryArr.forEach(text => {
+  const capitalizeText = (text).charAt().toUpperCase() + (text).slice(1)
+  searchResult += `${capitalizeText} `
+});
+
 const elSearchPageWrapper = document.querySelector("[data-search-page-wrapper]")
 const elSearchPageTrackWrapper = document.querySelector("[data-search-page-track-wrapper]")
 
@@ -20,7 +27,7 @@ async function getArtistData(resource, query) {
 
 getArtistData(API_SEARCH, searchQuery)
 
-document.title = `${(searchQuery).charAt().toUpperCase() + (searchQuery).slice(1)}`
+document.title = searchResult
 
 // Render tracks function
 function renderSearchedTracks(tracks) {
@@ -29,7 +36,7 @@ function renderSearchedTracks(tracks) {
     const elSearchTrackCard = elTrackTemplate.content.cloneNode(true)
     const elSearchTrackCardImg = elSearchTrackCard.querySelector("[data-track-img]")
 
-    document.querySelector("[data-search-page-tracks-title]").textContent = `Tracks of ${(searchQuery).charAt().toUpperCase() + (searchQuery).slice(1)}`
+    document.querySelector("[data-search-page-tracks-title]").textContent = `${searchResult}`
     elSearchTrackCardImg.src = track.album.cover_big
     elSearchTrackCardImg.width = 250
     elSearchTrackCardImg.height = 250
@@ -41,3 +48,4 @@ function renderSearchedTracks(tracks) {
     elSearchPageTrackWrapper.appendChild(elSearchTrackCard)
   })
 }
+
