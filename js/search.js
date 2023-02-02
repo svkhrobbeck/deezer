@@ -1,6 +1,7 @@
 const API_SEARCH = "https://deezer.humosoft.uz/search?q="
 const searchQuery = new URLSearchParams(window.location.search).get("query")
 
+// Search Result data
 const searchQueryArr = searchQuery.split(" ")
 let searchResult = ""
 searchQueryArr.forEach(text => {
