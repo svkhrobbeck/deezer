@@ -524,7 +524,6 @@ body {
   font-size: 20px;
   font-weight: 400;
   color: #fff;
-  text-transform: uppercase;
 }
 @media only screen and (max-width: 768px) {
   .copyright {
