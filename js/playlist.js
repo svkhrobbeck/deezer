@@ -1,4 +1,4 @@
-const API_PLAYLIST = "https://deezer.humosoft.uz/playlist"
+const API_PLAYLIST = "https://deezer.humosoft.uz/playlist/"
 const playlistId = new URLSearchParams(window.location.search).get("id")
 
 const elPlaylistPageWrapper = document.querySelector("[data-playlist-page-wrapper]")
@@ -9,10 +9,10 @@ async function getPlaylistData(resource, id) {
 
   loader(true)
 
-  const res = await fetch(`${resource}/${id}`)
+  const res = await fetch(`${resource}${id}`)
   const searchResult = await res.json()
 
-  const resTracks = await fetch(`${resource}/${id}/tracks`)
+  const resTracks = await fetch(`${resource}${id}/tracks`)
   const searchTracksResult = await resTracks.json()
 
   loader(false)

@@ -10,6 +10,7 @@ async function getData(resource) {
 
   const res = await fetch(resource)
   const searchResult = await res.json()
+
   renderArtists(searchResult.artists.data)
   renderPlaylists(searchResult.playlists.data)
   renderTracks(searchResult.tracks.data)

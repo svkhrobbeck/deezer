@@ -1,4 +1,4 @@
-const API_ARTIST = "https://deezer.humosoft.uz/artist"
+const API_ARTIST = "https://deezer.humosoft.uz/artist/"
 const artistId = new URLSearchParams(window.location.search).get("id")
 
 const elArtistPageWrapper = document.querySelector("[data-artists-page-wrapper]")
@@ -9,10 +9,10 @@ async function getArtistData(resource, id) {
 
   loader(true)
 
-  const res = await fetch(`${resource}/${id}`)
+  const res = await fetch(`${resource}${id}`)
   const searchResult = await res.json()
 
-  const resTracks = await fetch(`${resource}/${id}/top?limit=50`)
+  const resTracks = await fetch(`${resource}${id}/top?limit=50`)
   const searchTracksResult = await resTracks.json()
 
   loader(false)
