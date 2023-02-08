@@ -2,6 +2,8 @@
 :root {
   --primary-bg-color: #0b466e;
   --text-color: #000;
+  --card-color: #fff;
+  --link-color: #0d6efd;
 }
 
 /* GLOBAL */
@@ -45,6 +47,14 @@ body {
     cover fixed;
   display: flex;
   flex-direction: column;
+}
+
+/* DARK MODE */
+.dark-mode {
+  --text-color: #fff;
+  --primary-bg-color: #202c36;
+  --card-color: #2b3844;
+  --link-color: #f6f6f6;
 }
 
 /* SCROLL BAR */

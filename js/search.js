@@ -44,7 +44,7 @@ function renderSearchedTracks(tracks) {
     elSearchTrackCard.querySelector("[data-track-title]").textContent = track.title
     elSearchTrackCard.querySelector("[data-track-album-text]").textContent = `Album: ${track.album.title}`
     elSearchTrackCard.querySelector("[data-track-name-text]").textContent = `Author: ${track.artist.name}`
-    elSearchTrackCard.querySelector("[data-play-btn]").dataset.trackURL = track.preview
+    elSearchTrackCard.querySelector("[data-toggle-btn]").dataset.trackURL = track.preview
 
     elSearchPageTrackWrapper.appendChild(elSearchTrackCard)
   })

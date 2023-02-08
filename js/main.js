@@ -1,5 +1,8 @@
 const API = "https://deezer.humosoft.uz/chart"
 
+const elThemeToggler = document.querySelector("[data-theme-toggler]")
+const elBody = document.body
+
 const elArtistTemplate = document.querySelector("[data-artist-template]")
 const elPlaylistTemplate = document.querySelector("[data-playlist-template]")
 const elTrackTemplate = document.querySelector("[data-track-template]")
@@ -14,41 +17,30 @@ const elLogo = document.querySelector("[data-logo]")
 
 
 document.addEventListener("click", evt => {
-  onPlayBtnClick(evt)
-  onPauseBtnClick(evt)
+  onToggleBtnClick(evt)
   onSearchBtnClick(evt)
 })
 
-// play button function 
-function onPlayBtnClick(evt) {
-  const elTarget = evt.target.closest("[data-play-btn]")
+// play toggle function 
+function onToggleBtnClick(evt) {
+  const elTarget = evt.target.closest("[data-toggle-btn]")
 
   if (!elTarget) return
 
-  elTarget.style.display = "none"
-  elTarget.nextElementSibling.style.display = "flex"
+  document.querySelectorAll("[data-toggle-btn].playing").forEach(btn => {
+    if (elTarget.dataset.trackURL !== btn.dataset.trackURL) {
+      btn.classList.remove("playing")
+    }
+  })
+
+  elTarget.classList.toggle("playing")
 
   if (elAudio.src !== elTarget.dataset.trackURL) {
     elAudio.src = elTarget.dataset.trackURL
   }
 
-  if (elAudio.paused) {
-    elAudio.play()
-  }
-}
-
-// play button function 
-function onPauseBtnClick(evt) {
-  const elTarget = evt.target.closest("[data-pause-btn]")
-
-  if (!elTarget) return
-
-  elTarget.style.display = "none"
-  elTarget.previousElementSibling.style.display = "flex"
-
-  if (!elAudio.paused) {
-    elAudio.pause()
-  }
+  if (elAudio.paused) elAudio.play()
+  else elAudio.pause()
 }
 
 // Click search button

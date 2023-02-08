@@ -58,7 +58,7 @@ function renderTracksPlaylist(tracks) {
     elPlaylistTrackCard.querySelector("[data-track-title]").textContent = track.title
     elPlaylistTrackCard.querySelector("[data-track-album-text]").textContent = `Album: ${track.album.title}`
     elPlaylistTrackCard.querySelector("[data-track-name-text]").textContent = `Author: ${track.artist.name}`
-    elPlaylistTrackCard.querySelector("[data-play-btn]").dataset.trackURL = track.preview
+    elPlaylistTrackCard.querySelector("[data-toggle-btn]").dataset.trackURL = track.preview
 
     elPlaylistPageTrackWrapper.appendChild(elPlaylistTrackCard)
   })

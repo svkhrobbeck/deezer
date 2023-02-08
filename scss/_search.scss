@@ -20,11 +20,11 @@
   background: transparent;
   
   &::placeholder {
-    color: #000;
+    color: var(--text-color);
   }
   
   &.show {
-    border: 1px solid #000;
+    border: 1px solid var(--text-color);
     padding: 5px 10px 5px 50px;
     max-width: 300px;
     opacity: 1;

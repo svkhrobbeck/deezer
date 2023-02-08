@@ -29,7 +29,7 @@ getArtistData(API_ARTIST, artistId)
 function renderArtistInfo(artist) {
   const elArtistPageCard = elArtistTemplate.content.cloneNode(true)
   const elArtistPageCardImg = elArtistPageCard.querySelector("[data-artist-img]")
-  
+
   document.title = `${artist.name}`
   document.querySelector("[data-artist-page-title]").textContent = "Artist"
   elArtistPageCardImg.src = artist.picture_big
@@ -56,7 +56,7 @@ function renderTracksTop(tracks) {
     elArtistTrackCard.querySelector("[data-track-title]").textContent = track.title
     elArtistTrackCard.querySelector("[data-track-album-text]").textContent = `Album: ${track.album.title}`
     elArtistTrackCard.querySelector("[data-track-name-text]").textContent = `Author: ${track.artist.name}`
-    elArtistTrackCard.querySelector("[data-play-btn]").dataset.trackURL = track.preview
+    elArtistTrackCard.querySelector("[data-toggle-btn]").dataset.trackURL = track.preview
 
     elArtistPageTrackWrapper.appendChild(elArtistTrackCard)
   })

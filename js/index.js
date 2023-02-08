@@ -82,7 +82,7 @@ function renderTracks(tracks) {
     elTrackCardImg.height = 250
     elTrackCard.querySelector("[data-track-title]").textContent = track.title
     elTrackCard.querySelector("[data-track-type-text]").textContent = track.type
-    elTrackCard.querySelector("[data-play-btn]").dataset.trackURL = track.preview
+    elTrackCard.querySelector("[data-toggle-btn]").dataset.trackURL = track.preview
 
     elTracksWrapper.appendChild(elTrackCard)
   })

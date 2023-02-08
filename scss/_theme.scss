@@ -1,0 +1,17 @@
+.theme {
+  position: fixed;
+  right: 10px;
+  top: 20px;
+  z-index: 100;
+}
+
+.theme__btn {
+  border: none;
+  background-color: transparent;
+}
+
+.theme__btn-inner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
