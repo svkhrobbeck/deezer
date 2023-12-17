@@ -7,6 +7,7 @@ const app = express();
 app.use(express.static("./public"));
 app.use(express.json());
 app.use(cors());
+// app.use("/api")
 
 axios.defaults.baseURL = "https://api.deezer.com";
 
