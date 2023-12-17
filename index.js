@@ -1,13 +1,13 @@
 import express from "express";
 import cors from "cors";
 import axios from "axios";
+import serverless from "serverless-http";
 
 const app = express();
 
 app.use(express.static("./public"));
 app.use(express.json());
 app.use(cors());
-// app.use("/api")
 
 axios.defaults.baseURL = "https://api.deezer.com";
 
@@ -51,4 +51,5 @@ app.get("/api/search", async (req, res) => {
   res.status(200).json(data);
 });
 
-app.listen(3000, console.log("server is running"));
+// app.listen(3000, console.log("server is running"));
+const handler = serverless(app);
