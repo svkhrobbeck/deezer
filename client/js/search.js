@@ -1,4 +1,4 @@
-const API_SEARCH = "/api/search?q=";
+
 const searchQuery = new URLSearchParams(window.location.search).get("query");
 
 // Search Result data

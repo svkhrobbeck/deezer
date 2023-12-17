@@ -1,4 +1,3 @@
-const API_PLAYLIST = "/api/playlist";
 const playlistId = new URLSearchParams(window.location.search).get("id");
 
 const elPlaylistPageWrapper = document.querySelector(

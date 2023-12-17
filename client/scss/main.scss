@@ -1,14 +1,15 @@
-@import "./variables";
-@import "./mixins";
-@import "./fonts";
-@import "./common";
-@import "./container";
-@import "./loader";
-@import "./search";
-// @import "./theme";
+@import "helpers/bootstrap";
+@import "helpers/normalize";
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/fonts";
+@import "helpers/common";
+@import "helpers/container";
+@import "helpers/loader";
+@import "helpers/search";
 
 // BLOCKS
-@import "./blocks/header";
-@import "./blocks/info-card";
-@import "./blocks/page";
-@import "./blocks/footer";
+@import "blocks/header";
+@import "blocks/info-card";
+@import "blocks/page";
+@import "blocks/footer";

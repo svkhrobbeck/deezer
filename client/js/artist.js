@@ -1,4 +1,3 @@
-const API_ARTIST = "/api/artist";
 const artistId = new URLSearchParams(window.location.search).get("id");
 
 const elArtistPageWrapper = document.querySelector(
@@ -9,19 +8,17 @@ const elArtistPageTrackWrapper = document.querySelector(
 );
 
 // get Data
-async function getArtistData(resource, id) {
+async function getArtistData(url, id) {
   loader(true);
 
-  const res = await fetch(`${resource}/${id}`);
+  const res = await fetch(`${url}/${id}`);
   const searchResult = await res.json();
 
-  const resTracks = await fetch(`${resource}/${id}/top?limit=50`);
+  const resTracks = await fetch(`${url}/${id}/top?limit=50`);
   const searchTracksResult = await resTracks.json();
 
   loader(false);
-
   renderArtistInfo(searchResult);
-
   renderTracksTop(searchTracksResult.data);
 }
 

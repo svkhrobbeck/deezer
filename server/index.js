@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import axios from "axios";
-import serverless from "serverless-http";
 
 const app = express();
 
@@ -39,10 +38,10 @@ app.get("/api/artist/:id", async (req, res) => {
 });
 
 app.get("/api/artist/:id/top", async (req, res) => {
-  const { id } = req.params.id;
-  const { limit } = req.query.id;
+  const id = req.params?.id;
+  const limit = req.query?.limit || 50;
 
-  const { data } = await axios.get(`/artist/${id}/top?limit=${limit || 10}`);
+  const { data } = await axios.get(`/artist/${id}/top?limit=${limit}`);
   res.status(200).json(data);
 });
 
@@ -51,5 +50,4 @@ app.get("/api/search", async (req, res) => {
   res.status(200).json(data);
 });
 
-// app.listen(3000, console.log("server is running"));
-const handler = serverless(app);
+app.listen(3000, console.log("server is running"));
