@@ -112,6 +112,19 @@ body {
   text-decoration: none;
 }
 
+.swiper {
+  padding: 35px 10px;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
 /* RETINA BGS */
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min--moz-device-pixel-ratio: 2),

@@ -1,4 +1,4 @@
-const API = "https://deezer.humosoft.uz/chart"
+const API = "/api/chart";
 
 const elThemeToggler = document.querySelector("[data-theme-toggler]")
 const elBody = document.body
@@ -21,7 +21,7 @@ document.addEventListener("click", evt => {
   onSearchBtnClick(evt)
 })
 
-// play toggle function 
+// play toggle function
 function onToggleBtnClick(evt) {
   const elTarget = evt.target.closest("[data-toggle-btn]")
 
