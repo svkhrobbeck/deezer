@@ -43,8 +43,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: var(--text-color);
-  background: var(--primary-bg-color) url("../images/bg.jpg") no-repeat center /
-    cover fixed;
+  background: var(--primary-bg-color) url("../images/bg.jpg") no-repeat center / cover fixed;
   display: flex;
   flex-direction: column;
 }

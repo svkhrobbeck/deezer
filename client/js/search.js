@@ -1,4 +1,3 @@
-
 const searchQuery = new URLSearchParams(window.location.search).get("query");
 
 // Search Result data
@@ -9,12 +8,8 @@ searchQueryArr.forEach(text => {
   searchResult += `${capitalizeText} `;
 });
 
-const elSearchPageWrapper = document.querySelector(
-  "[data-search-page-wrapper]"
-);
-const elSearchPageTrackWrapper = document.querySelector(
-  "[data-search-page-track-wrapper]"
-);
+const elSearchPageWrapper = document.querySelector("[data-search-page-wrapper]");
+const elSearchPageTrackWrapper = document.querySelector("[data-search-page-track-wrapper]");
 
 // get Data
 async function getArtistData(resource, query) {
@@ -36,25 +31,16 @@ document.title = searchResult;
 function renderSearchedTracks(tracks) {
   tracks.forEach(track => {
     const elSearchTrackCard = elTrackTemplate.content.cloneNode(true);
-    const elSearchTrackCardImg =
-      elSearchTrackCard.querySelector("[data-track-img]");
+    const elSearchTrackCardImg = elSearchTrackCard.querySelector("[data-track-img]");
 
-    document.querySelector(
-      "[data-search-page-tracks-title]"
-    ).textContent = `${searchResult}`;
+    document.querySelector("[data-search-page-tracks-title]").textContent = `${searchResult}`;
     elSearchTrackCardImg.src = track.album.cover_big;
     elSearchTrackCardImg.width = 250;
     elSearchTrackCardImg.height = 250;
-    elSearchTrackCard.querySelector("[data-track-title]").textContent =
-      track.title;
-    elSearchTrackCard.querySelector(
-      "[data-track-album-text]"
-    ).textContent = `Album: ${track.album.title}`;
-    elSearchTrackCard.querySelector(
-      "[data-track-name-text]"
-    ).textContent = `Author: ${track.artist.name}`;
-    elSearchTrackCard.querySelector("[data-toggle-btn]").dataset.trackURL =
-      track.preview;
+    elSearchTrackCard.querySelector("[data-track-title]").textContent = track.title;
+    elSearchTrackCard.querySelector("[data-track-album-text]").textContent = `Album: ${track.album.title}`;
+    elSearchTrackCard.querySelector("[data-track-name-text]").textContent = `Author: ${track.artist.name}`;
+    elSearchTrackCard.querySelector("[data-toggle-btn]").dataset.trackURL = track.preview;
 
     elSearchPageTrackWrapper.appendChild(elSearchTrackCard);
   });

@@ -1,11 +1,7 @@
 const artistId = new URLSearchParams(window.location.search).get("id");
 
-const elArtistPageWrapper = document.querySelector(
-  "[data-artists-page-wrapper]"
-);
-const elArtistPageTrackWrapper = document.querySelector(
-  "[data-artists-page-track-wrapper]"
-);
+const elArtistPageWrapper = document.querySelector("[data-artists-page-wrapper]");
+const elArtistPageTrackWrapper = document.querySelector("[data-artists-page-track-wrapper]");
 
 // get Data
 async function getArtistData(url, id) {
@@ -27,8 +23,7 @@ getArtistData(API_ARTIST, artistId);
 // Render artist info
 function renderArtistInfo(artist) {
   const elArtistPageCard = elArtistTemplate.content.cloneNode(true);
-  const elArtistPageCardImg =
-    elArtistPageCard.querySelector("[data-artist-img]");
+  const elArtistPageCardImg = elArtistPageCard.querySelector("[data-artist-img]");
 
   document.title = `${artist.name}`;
   document.querySelector("[data-artist-page-title]").textContent = "Artist";
@@ -36,10 +31,8 @@ function renderArtistInfo(artist) {
   elArtistPageCardImg.alt = artist.name;
   elArtistPageCardImg.width = 250;
   elArtistPageCardImg.height = 250;
-  elArtistPageCard.querySelector("[data-artist-name]").textContent =
-    artist.name;
-  elArtistPageCard.querySelector("[data-artist-job-text]").textContent =
-    artist.type;
+  elArtistPageCard.querySelector("[data-artist-name]").textContent = artist.name;
+  elArtistPageCard.querySelector("[data-artist-job-text]").textContent = artist.type;
 
   elArtistPageWrapper.appendChild(elArtistPageCard);
 }
@@ -48,24 +41,16 @@ function renderArtistInfo(artist) {
 function renderTracksTop(tracks) {
   tracks.forEach(track => {
     const elArtistTrackCard = elTrackTemplate.content.cloneNode(true);
-    const elArtistTrackCardImg =
-      elArtistTrackCard.querySelector("[data-track-img]");
+    const elArtistTrackCardImg = elArtistTrackCard.querySelector("[data-track-img]");
 
-    document.querySelector("[data-artist-page-tracks-title]").textContent =
-      "Tracks";
+    document.querySelector("[data-artist-page-tracks-title]").textContent = "Tracks";
     elArtistTrackCardImg.src = track.album.cover_big;
     elArtistTrackCardImg.width = 250;
     elArtistTrackCardImg.height = 250;
-    elArtistTrackCard.querySelector("[data-track-title]").textContent =
-      track.title;
-    elArtistTrackCard.querySelector(
-      "[data-track-album-text]"
-    ).textContent = `Album: ${track.album.title}`;
-    elArtistTrackCard.querySelector(
-      "[data-track-name-text]"
-    ).textContent = `Author: ${track.artist.name}`;
-    elArtistTrackCard.querySelector("[data-toggle-btn]").dataset.trackURL =
-      track.preview;
+    elArtistTrackCard.querySelector("[data-track-title]").textContent = track.title;
+    elArtistTrackCard.querySelector("[data-track-album-text]").textContent = `Album: ${track.album.title}`;
+    elArtistTrackCard.querySelector("[data-track-name-text]").textContent = `Author: ${track.artist.name}`;
+    elArtistTrackCard.querySelector("[data-toggle-btn]").dataset.trackURL = track.preview;
 
     elArtistPageTrackWrapper.appendChild(elArtistTrackCard);
   });

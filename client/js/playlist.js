@@ -1,11 +1,7 @@
 const playlistId = new URLSearchParams(window.location.search).get("id");
 
-const elPlaylistPageWrapper = document.querySelector(
-  "[data-playlist-page-wrapper]"
-);
-const elPlaylistPageTrackWrapper = document.querySelector(
-  "[data-playlist-page-track-wrapper]"
-);
+const elPlaylistPageWrapper = document.querySelector("[data-playlist-page-wrapper]");
+const elPlaylistPageTrackWrapper = document.querySelector("[data-playlist-page-track-wrapper]");
 
 // Get data
 async function getPlaylistData(resource, id) {
@@ -31,21 +27,16 @@ getPlaylistData(API_PLAYLIST, playlistId);
 function renderPlaylistInfo(playlist) {
   if (!playlist.error) {
     const elPlaylistPageCard = elPlaylistTemplate.content.cloneNode(true);
-    const elPlaylistPageCardImg = elPlaylistPageCard.querySelector(
-      "[data-playlist-img]"
-    );
+    const elPlaylistPageCardImg = elPlaylistPageCard.querySelector("[data-playlist-img]");
 
     document.title = `${playlist.title}`;
-    document.querySelector("[data-playlist-page-title]").textContent =
-      "Playlist";
+    document.querySelector("[data-playlist-page-title]").textContent = "Playlist";
     elPlaylistPageCardImg.src = playlist.picture_big;
     elPlaylistPageCardImg.alt = playlist.title;
     elPlaylistPageCardImg.width = 250;
     elPlaylistPageCardImg.height = 250;
-    elPlaylistPageCard.querySelector("[data-playlist-title]").textContent =
-      playlist.title;
-    elPlaylistPageCard.querySelector("[data-playlist-desc-text]").textContent =
-      playlist.description;
+    elPlaylistPageCard.querySelector("[data-playlist-title]").textContent = playlist.title;
+    elPlaylistPageCard.querySelector("[data-playlist-desc-text]").textContent = playlist.description;
 
     elPlaylistPageWrapper.appendChild(elPlaylistPageCard);
   } else {
@@ -57,24 +48,16 @@ function renderPlaylistInfo(playlist) {
 function renderTracksPlaylist(tracks) {
   tracks.forEach(track => {
     const elPlaylistTrackCard = elTrackTemplate.content.cloneNode(true);
-    const elPlaylistTrackCardImg =
-      elPlaylistTrackCard.querySelector("[data-track-img]");
+    const elPlaylistTrackCardImg = elPlaylistTrackCard.querySelector("[data-track-img]");
 
-    document.querySelector("[data-playlist-page-tracks-title]").textContent =
-      "Tracks";
+    document.querySelector("[data-playlist-page-tracks-title]").textContent = "Tracks";
     elPlaylistTrackCardImg.src = track.album.cover_big;
     elPlaylistTrackCardImg.width = 250;
     elPlaylistTrackCardImg.height = 250;
-    elPlaylistTrackCard.querySelector("[data-track-title]").textContent =
-      track.title;
-    elPlaylistTrackCard.querySelector(
-      "[data-track-album-text]"
-    ).textContent = `Album: ${track.album.title}`;
-    elPlaylistTrackCard.querySelector(
-      "[data-track-name-text]"
-    ).textContent = `Author: ${track.artist.name}`;
-    elPlaylistTrackCard.querySelector("[data-toggle-btn]").dataset.trackURL =
-      track.preview;
+    elPlaylistTrackCard.querySelector("[data-track-title]").textContent = track.title;
+    elPlaylistTrackCard.querySelector("[data-track-album-text]").textContent = `Album: ${track.album.title}`;
+    elPlaylistTrackCard.querySelector("[data-track-name-text]").textContent = `Author: ${track.artist.name}`;
+    elPlaylistTrackCard.querySelector("[data-toggle-btn]").dataset.trackURL = track.preview;
 
     elPlaylistPageTrackWrapper.appendChild(elPlaylistTrackCard);
   });

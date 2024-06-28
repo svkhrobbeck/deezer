@@ -2,8 +2,7 @@
 .site-header {
   padding: 20px 0;
   background-color: var(--card-color);
-  transition: padding 0.5s ease, background-color 0.5s ease,
-    backdrop-filter 0.5s ease;
+  transition: padding 0.5s ease, background-color 0.5s ease, backdrop-filter 0.5s ease;
 
   &.sticky {
     position: fixed;
