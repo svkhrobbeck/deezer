@@ -15,12 +15,12 @@ app.use(cors());
 axios.defaults.baseURL = "https://api.deezer.com";
 
 app.get("*", async (req, res) => {
-  const data = await axios.get(req.url);
+  const data = await axios.get(req.url, { params: req.query });
   res.status(200).json(get(data, "data"));
 });
 
 app.post("*", async (req, res) => {
-  const data = await axios.post(req.url, req.body);
+  const data = await axios.post(req.url, req.body, { params: req.query });
   res.status(200).json(get(data, "data"));
 });
 
