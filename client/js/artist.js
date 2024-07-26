@@ -18,7 +18,7 @@ async function getArtistData(url, id) {
   renderTracksTop(searchTracksResult.data);
 }
 
-getArtistData(API_ARTIST, artistId);
+getArtistData(API.artist, artistId);
 
 // Render artist info
 function renderArtistInfo(artist) {

@@ -21,7 +21,7 @@ async function getPlaylistData(resource, id) {
   renderTracksPlaylist(searchTracksResult.data);
 }
 
-getPlaylistData(API_PLAYLIST, playlistId);
+getPlaylistData(API.playlist, playlistId);
 
 // Render playlist info
 function renderPlaylistInfo(playlist) {

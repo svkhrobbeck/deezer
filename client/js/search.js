@@ -23,7 +23,7 @@ async function getArtistData(resource, query) {
   renderSearchedTracks(searchResult.data);
 }
 
-getArtistData(API_SEARCH, searchQuery);
+getArtistData(API.search, searchQuery);
 
 document.title = searchResult;
 

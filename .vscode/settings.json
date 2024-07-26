@@ -1,9 +1,15 @@
 {
   "liveSassCompile.settings.formats": [
     {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/client/css"
+    },
+    {
       "format": "compressed",
       "extensionName": ".min.css",
-      "savePath": "/client/css"
+      "savePath": "/client/css",
+      "generateMap": false
     }
   ]
 }

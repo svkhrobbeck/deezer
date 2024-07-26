@@ -1,7 +1,7 @@
-const elArtistsWrapper = document.querySelector("[data-artists-wrapper]");
-const elPlaylistsWrapper = document.querySelector("[data-playlists-wrapper]");
 const elTracksWrapper = document.querySelector("[data-tracks-wrapper]");
+const elArtistsWrapper = document.querySelector("[data-artists-wrapper]");
 const elTPodcastsWrapper = document.querySelector("[data-podcasts-wrapper]");
+const elPlaylistsWrapper = document.querySelector("[data-playlists-wrapper]");
 
 // GetData function
 async function getData(resource) {
@@ -17,7 +17,7 @@ async function getData(resource) {
 
   loader(false);
 }
-getData(API);
+getData(API.chart);
 
 // Render Artists function
 function renderArtists(artists) {

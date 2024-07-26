@@ -1,23 +1,24 @@
-const BASE_API_URL = "https://sbk-deezer-api-pr.glitch.me/api";
-const API = `${BASE_API_URL}/chart`;
-const API_PLAYLIST = `${BASE_API_URL}/playlist`;
-const API_SEARCH = `${BASE_API_URL}/search?q=`;
-const API_ARTIST = `${BASE_API_URL}/artist`;
+const API = {
+  chart: "/chart",
+  artist: "/artist",
+  search: "/search?q=",
+  playlist: "/playlist",
+};
 
-const elThemeToggler = document.querySelector("[data-theme-toggler]");
 const elBody = document.body;
+const elThemeToggler = document.querySelector("[data-theme-toggler]");
 
-const elArtistTemplate = document.querySelector("[data-artist-template]");
-const elPlaylistTemplate = document.querySelector("[data-playlist-template]");
 const elTrackTemplate = document.querySelector("[data-track-template]");
+const elArtistTemplate = document.querySelector("[data-artist-template]");
 const elPodcastTemplate = document.querySelector("[data-podcast-template]");
+const elPlaylistTemplate = document.querySelector("[data-playlist-template]");
 
-const elAudio = document.querySelector("[data-music]");
-const ElSiteHeader = document.querySelector("[data-site-header]");
-const elLoader = document.querySelector("[data-loader]");
-const elSearchTogglerBtn = document.querySelector("[data-search-toggler]");
-const elSearchInput = document.querySelector("[data-search-input]");
 const elLogo = document.querySelector("[data-logo]");
+const elAudio = document.querySelector("[data-music]");
+const elLoader = document.querySelector("[data-loader]");
+const ElSiteHeader = document.querySelector("[data-site-header]");
+const elSearchInput = document.querySelector("[data-search-input]");
+const elSearchTogglerBtn = document.querySelector("[data-search-toggler]");
 
 document.addEventListener("click", evt => {
   onToggleBtnClick(evt);
@@ -46,7 +47,7 @@ function onToggleBtnClick(evt) {
   else elAudio.pause();
 }
 
-// Click search button
+// click search button
 function onSearchBtnClick(evt) {
   const elTarget = evt.target.closest("[data-search-toggler]");
 
@@ -66,7 +67,7 @@ function onSearchBtnClick(evt) {
   }
 }
 
-// Audio ended
+// audio ended
 elAudio.addEventListener("ended", () => {
   const elPlayBtn = document.querySelectorAll("[data-play-btn]");
   const elPauseBtn = document.querySelectorAll("[data-pause-btn]");
@@ -80,16 +81,13 @@ elAudio.addEventListener("ended", () => {
   });
 });
 
-// Header scroll evt
+// header scroll event
 window.addEventListener("scroll", () => {
   ElSiteHeader.classList.toggle("sticky", window.scrollY > 0);
 });
 
-// Loader
+// loader
 function loader(state) {
-  if (state) {
-    elLoader.classList.remove("hidden");
-  } else {
-    elLoader.classList.add("hidden");
-  }
+  if (state) elLoader.classList.remove("hidden");
+  else elLoader.classList.add("hidden");
 }
